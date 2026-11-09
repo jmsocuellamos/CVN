@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javier Morales Socuéllamos · CV</title>
+<meta name="description" content="Javier Morales Socuéllamos, Profesor Titular de Universidad en Estadística e Investigación Operativa, Universidad Miguel Hernández de Elche.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   PALETA "MEDIANOCHE Y ÁMBAR"
+   Azul noche (confianza, rigor) + ámbar (energía, luz)
+   + turquesa (datos, ciencia) + coral (acento puntual)
+   ========================================================= */
+:root{
+  --night-950:#070d1c; --night-900:#0b1428; --night-800:#111d38; --night-700:#1a2a50; --night-600:#284076;
+  --amber:#f4a259; --amber-d:#e2873a; --amber-l:#fbd3a6;
+  --teal:#2a9d8f; --teal-d:#1f7a70; --teal-l:#bfe6df;
+  --coral:#e76f51;
+  --ivory:#fbf8f3; --sand:#f4ede2; --line:#e8dfd1; --card:#ffffff;
+  --ink:#121a2c; --muted:#5d6579;
+  --radius:20px; --shadow:0 14px 34px -16px rgba(11,20,40,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--ivory);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+a{color:var(--teal-d);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* ---------- Iconos (sprite propio, bicolor) ---------- */
+.ic{width:1.25em;height:1.25em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.22em;--ac:var(--amber)}
+.ic.teal{--ac:var(--teal)}
+.ic.coral{--ac:var(--coral)}
+.ic.light{--ac:rgba(244,162,89,.55)}
+
+/* Tile: icono dentro de una "gema" con degradado, brillo y sombra */
+.tile{--s:56px;width:var(--s);height:var(--s);border-radius:16px;display:grid;place-items:center;position:relative;flex-shrink:0;
+  background:linear-gradient(145deg,var(--night-600),var(--night-900));color:#fff;
+  box-shadow:0 12px 24px -10px rgba(11,20,40,.55),inset 0 1px 0 rgba(255,255,255,.18)}
+.tile::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 28% 22%,rgba(255,255,255,.28),transparent 45%)}
+.tile{box-shadow:7px 7px 0 -1px var(--amber),0 14px 26px -10px rgba(11,20,40,.55),inset 0 1px 0 rgba(255,255,255,.18)}
+.tile .ic{width:52%;height:52%;position:relative}
+.tile.soft{background:linear-gradient(145deg,#fff,var(--sand));color:var(--night-700);box-shadow:0 8px 18px -10px rgba(11,20,40,.35),inset 0 0 0 1px var(--line)}
+.tile.soft::before{display:none}
+.tile.soft{box-shadow:6px 6px 0 -1px var(--teal-l),0 8px 18px -10px rgba(11,20,40,.35),inset 0 0 0 1px var(--line)}
+.tile.sm{--s:44px;border-radius:13px}
+.tile.sm{box-shadow:5px 5px 0 -1px var(--amber),0 10px 20px -10px rgba(11,20,40,.5)}
+.tile.soft.sm{box-shadow:5px 5px 0 -1px var(--teal-l),0 8px 16px -10px rgba(11,20,40,.3),inset 0 0 0 1px var(--line)}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav.scrolled{background:rgba(7,13,28,.88);backdrop-filter:blur(12px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:600;font-size:.95rem}
+.brand:hover{text-decoration:none}
+.mono{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:700;font-size:1rem;color:var(--night-900);background:linear-gradient(135deg,var(--amber-l),var(--amber))}
+.links{display:flex;gap:2px;list-style:none}
+.links a{color:#cfd7ea;font-size:.86rem;font-weight:500;padding:8px 12px;border-radius:999px;transition:.2s}
+.links a:hover,.links a.active{background:rgba(244,162,89,.16);color:#fff;text-decoration:none}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;font-size:1.5rem}
+
+/* ---------- HERO ---------- */
+header.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;color:#e9edf7;
+  background:
+    radial-gradient(700px 500px at 82% 30%,rgba(244,162,89,.22),transparent 60%),
+    radial-gradient(700px 520px at 5% 95%,rgba(42,157,143,.28),transparent 60%),
+    linear-gradient(160deg,var(--night-950),var(--night-800) 55%,var(--night-900))}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at 60% 40%,#000 20%,transparent 75%)}
+.hero canvas{position:absolute;inset:0;opacity:.5}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:96px;padding-bottom:70px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:18px}
+.kicker::before{content:"";width:28px;height:2px;background:var(--amber);border-radius:2px}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);color:#fff;margin-bottom:16px}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--amber-l),var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.12rem;color:#c3cbe0;max-width:590px;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.84rem;color:#e3e8f4}
+.chip .ic{color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:14px;font-weight:600;font-size:.92rem;transition:.25s}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(135deg,var(--amber-l),var(--amber));color:var(--night-950);box-shadow:0 12px 28px -10px rgba(244,162,89,.7)}
+.btn.ghost{border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.04)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Composición del retrato */
+.portrait{position:relative;width:min(380px,82vw);aspect-ratio:1;justify-self:center}
+.portrait .orbit{position:absolute;inset:-6%;border-radius:50%;border:1.5px dashed rgba(244,162,89,.45);animation:spin 40s linear infinite}
+.portrait .orbit::before,.portrait .orbit::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--amber);top:50%;left:-7px;box-shadow:0 0 16px var(--amber)}
+.portrait .orbit::after{background:var(--teal);left:auto;right:12%;top:6%;width:10px;height:10px;box-shadow:0 0 14px var(--teal)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.portrait .disc{position:absolute;inset:6%;border-radius:50%;overflow:hidden;
+  background:radial-gradient(circle at 30% 25%,var(--amber-l),var(--amber) 45%,var(--coral) 100%);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 0 0 8px rgba(255,255,255,.06)}
+.portrait .disc img{position:absolute;left:50%;bottom:-3%;width:92%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 13%);mask-image:linear-gradient(to bottom,transparent 0,#000 13%);transform:translateX(-50%);filter:drop-shadow(0 10px 18px rgba(7,13,28,.35))}
+.float{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:rgba(17,29,56,.72);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);box-shadow:0 14px 30px -12px rgba(0,0,0,.55);color:#fff;font-size:.78rem;animation:float 6s ease-in-out infinite}
+.float b{display:block;font-family:Fraunces,serif;font-size:1.25rem;line-height:1;color:var(--amber)}
+.float .tile{--s:36px;border-radius:10px}
+.float .tile{box-shadow:none}
+.f1{top:4%;left:-14%}
+.f2{bottom:10%;right:-12%;animation-delay:-2s}
+.f3{bottom:-2%;left:-4%;font-family:Fraunces,serif;font-style:italic;font-size:.95rem;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-10px)}}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--amber);animation:bob 2s ease-in-out infinite}
+.scroll-hint .ic{width:28px;height:28px}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* ---------- SECCIONES ---------- */
+section{padding:100px 0;position:relative}
+section.alt{background:var(--sand)}
+section.dark{background:linear-gradient(160deg,var(--night-900),var(--night-800));color:#e6ebf6}
+.sec-head{display:flex;align-items:center;gap:20px;margin-bottom:46px}
+.sec-head .num{font-family:Fraunces,serif;font-style:italic;color:var(--amber-d);font-size:.95rem;display:block;margin-bottom:2px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--night-900)}
+.sec-head p{color:var(--muted);font-size:.95rem}
+.dark .sec-head h2{color:#fff}
+.dark .sec-head p{color:#aab4cc}
+.dark .sec-head .num{color:var(--amber)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.sub{font-family:Inter,sans-serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-d);font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.sub .ic{color:var(--night-700)}
+
+/* Perfil */
+.about{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start}
+.about p{margin-bottom:14px;color:#2b3346}
+.about strong{color:var(--night-800)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(150deg,var(--night-700),var(--night-950));box-shadow:var(--shadow)}
+.stat:nth-child(2){background:linear-gradient(150deg,var(--teal),var(--teal-d) 55%,#134e48)}
+.stat:nth-child(3){background:linear-gradient(150deg,#f7b878,var(--amber-d));color:var(--night-950)}
+.stat .bgic{position:absolute;right:-12px;bottom:-14px;width:96px;height:96px;opacity:.18;stroke-width:1.3}
+.stat .n{font-family:Fraunces,serif;font-size:2.5rem;font-weight:700;line-height:1}
+.stat .l{font-size:.84rem;opacity:.85;margin-top:8px;max-width:150px}
+.ids{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ids a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:.84rem;font-weight:500;color:var(--night-700);box-shadow:0 4px 10px -8px rgba(11,20,40,.4);transition:.2s}
+.ids a:hover{border-color:var(--amber);text-decoration:none;transform:translateY(-2px)}
+
+.inst{display:flex;align-items:center;gap:16px;margin-top:22px;padding:18px 20px;border-radius:var(--radius);color:#e6ebf6;
+  background:linear-gradient(135deg,var(--night-800),var(--night-600));box-shadow:var(--shadow);transition:.25s}
+.inst:hover{text-decoration:none;transform:translateY(-3px)}
+.inst b{display:block;font-family:Fraunces,serif;font-size:1.35rem;color:var(--amber);line-height:1.1}
+.inst span:not(.tile){font-size:.82rem;color:#c3cbe0}
+.inst .inst-k{display:block;font-size:.68rem!important;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-l)!important;font-weight:700}
+.inst .go{margin-left:auto;color:var(--amber);flex-shrink:0}
+.tl-item .aff{margin-top:8px;display:flex;align-items:center;gap:6px;font-weight:600;color:var(--teal-d)}
+/* Docencia en tres bloques */
+.tblock{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:22px;box-shadow:0 10px 26px -18px rgba(11,20,40,.4)}
+.tblock-head{display:flex;align-items:center;gap:18px;margin-bottom:22px;flex-wrap:wrap}
+.tblock-head h3{font-size:1.6rem;color:var(--night-900)}
+.tblock-head p{font-size:.86rem;color:var(--muted)}
+.tblock-head .cnt{margin-left:auto;font-size:.78rem;font-weight:700;color:var(--night-700);background:var(--amber-l);padding:5px 12px;border-radius:999px}
+.tblock .courses{margin-bottom:18px}
+.tblock .course{background:var(--ivory)}
+.tblock .course::after{background:#fff}
+.tblock details.more{background:var(--ivory);margin-bottom:0}
+.minisub{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal-d);margin:4px 0 12px}
+.tagrow{display:flex;flex-wrap:wrap;gap:8px}
+.tag.hl{background:var(--amber-l);border-color:var(--amber-l);color:var(--night-900)}
+.role-card{display:flex;align-items:center;gap:18px;padding:20px 22px;margin-bottom:24px;border-radius:18px;
+  background:linear-gradient(135deg,var(--night-800),var(--night-600));color:#fff;box-shadow:var(--shadow)}
+.role-card .role-k{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--amber)}
+.role-card h4{font-family:Fraunces,serif;font-size:1.18rem;line-height:1.3;margin:2px 0}
+.role-card p{font-size:.84rem;color:#c3cbe0}
+a.link-card{color:inherit;border:1.5px dashed var(--amber)!important}
+a.link-card:hover{text-decoration:none}
+.research-band{background:linear-gradient(90deg,var(--night-950),var(--night-700));color:#fff;padding:34px 0;position:relative;overflow:hidden}
+.research-band::after{content:"";position:absolute;right:-60px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(244,162,89,.35),transparent 70%)}
+.research-band .wrap{display:flex;align-items:center;gap:20px;position:relative;z-index:1}
+.research-band span:not(.tile){font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:700}
+.research-band h2{font-size:clamp(1.8rem,3.5vw,2.4rem)}
+.research-band p{color:#aab4cc;font-size:.92rem}
+.thesis-sec{background:linear-gradient(180deg,var(--ivory),var(--sand))}
+.theses{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.thesis{position:relative;background:#fff;border-radius:24px;padding:30px;border:1px solid var(--line);box-shadow:0 22px 44px -22px rgba(11,20,40,.45);overflow:hidden;display:flex;flex-direction:column;gap:16px}
+.thesis::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--amber),var(--coral),var(--teal))}
+.thesis::after{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(244,162,89,.22),transparent 70%)}
+.th-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.th-year{font-family:Fraunces,serif;font-weight:700;font-size:3rem;line-height:1;background:linear-gradient(135deg,var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.th-badge{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--night-800);color:#fff;position:relative;z-index:1}
+.th-badge.new{background:var(--teal)}
+.thesis h3{font-size:1.4rem;color:var(--night-900);line-height:1.25}
+.th-who{display:flex;align-items:center;gap:12px}
+.th-who b{display:block;color:var(--night-900)}
+.th-who span:not(.tile){font-size:.82rem;color:var(--muted)}
+.th-tags{display:flex;flex-wrap:wrap;gap:8px}
+.th-tags span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;padding:5px 12px;border-radius:999px;background:var(--sand);color:var(--night-700)}
+.th-pubs{margin-top:auto;border-top:1px dashed var(--line);padding-top:14px;display:grid;gap:6px}
+.th-k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--teal-d)}
+.th-pubs a{font-size:.86rem;color:var(--night-700);display:flex;align-items:center;gap:6px}
+.others{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.others .card{display:flex;gap:14px;align-items:flex-start;padding:20px}
+.others h4{font-size:.92rem;color:var(--night-900);line-height:1.35}
+.others p{font-size:.82rem;color:var(--muted)}
+/* Líneas con ilustración */
+.lines{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.line{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s;box-shadow:0 6px 16px -12px rgba(11,20,40,.3)}
+.line:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--amber-l)}
+.line .art{height:120px;background:linear-gradient(160deg,var(--sand),#fff);border-bottom:1px solid var(--line);display:grid;place-items:center}
+.line .art svg{width:88%;height:100px}
+.line .txt{padding:18px 20px 22px}
+.line h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;color:var(--night-900);margin-bottom:6px}
+.line p{font-size:.88rem;color:var(--muted)}
+
+/* Timeline */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.tl{position:relative;padding-left:36px}
+.tl::before{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--amber),var(--teal))}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{content:"";position:absolute;left:-31px;top:24px;width:16px;height:16px;border-radius:50%;background:var(--ivory);border:3px solid var(--teal)}
+.tl-item.now::before{background:var(--amber);border-color:var(--amber-d);box-shadow:0 0 0 6px rgba(244,162,89,.25)}
+.tl-item .card{padding:20px 24px;box-shadow:0 8px 20px -14px rgba(11,20,40,.35)}
+.when{display:inline-block;font-size:.76rem;font-weight:600;color:var(--night-700);background:var(--amber-l);padding:3px 11px;border-radius:999px;margin-bottom:8px}
+.tl-item h3{font-family:Inter,sans-serif;font-size:1.03rem;font-weight:700;color:var(--night-900)}
+.tl-item p{font-size:.9rem;color:var(--muted)}
+
+/* Docencia */
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+.course{background:#fff;border-radius:var(--radius);padding:22px;border:1px solid var(--line);box-shadow:0 8px 20px -14px rgba(11,20,40,.35);display:flex;flex-direction:column;gap:10px;transition:.25s;position:relative;overflow:hidden}
+.course::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--sand)}
+.course:hover{transform:translateY(-4px);border-color:var(--amber-l)}
+.course .lvl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--teal-d)}
+.course h3{font-family:Inter,sans-serif;font-size:.98rem;font-weight:700;color:var(--night-900)}
+.course p{font-size:.84rem;color:var(--muted)}
+.course .yrs{font-size:.78rem;color:var(--amber-d);font-weight:600;display:flex;align-items:center;gap:6px;margin-top:auto}
+.course .tile{z-index:1}
+details.more{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 22px;margin-bottom:12px}
+details.more summary{cursor:pointer;padding:16px 0;font-weight:600;color:var(--night-800);list-style:none;display:flex;justify-content:space-between;align-items:center}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary .ic{transition:.25s;color:var(--amber-d)}
+details.more[open] summary .ic{transform:rotate(180deg)}
+details.more .body{padding-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:.8rem;padding:5px 12px;border-radius:999px;background:var(--sand);border:1px solid var(--line);color:var(--night-700)}
+.book-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.book{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.book b{color:var(--night-900);display:block;font-size:.93rem;line-height:1.35}
+.book span{font-size:.82rem;color:var(--muted)}
+
+/* Proyectos */
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px}
+.filter{border:1px solid var(--line);background:#fff;color:var(--night-700);padding:9px 16px;border-radius:999px;font:600 .84rem Inter,sans-serif;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:7px}
+.filter.on,.filter:hover{background:var(--night-800);color:#fff;border-color:var(--night-800)}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.proj{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;transition:.2s}
+.proj:hover{border-color:var(--amber-l);box-shadow:var(--shadow)}
+.proj .tile{grid-row:span 3}
+.proj h3{font-family:Inter,sans-serif;font-size:.96rem;font-weight:700;color:var(--night-900)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8rem;color:var(--muted)}
+.meta span{display:inline-flex;align-items:center;gap:5px}
+.meta .ic{color:var(--night-600);width:1.1em;height:1.1em}
+.badge{justify-self:start;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;letter-spacing:.02em}
+.badge.ip{background:var(--amber);color:var(--night-950)}
+.badge.mem{background:var(--teal-l);color:var(--teal-d)}
+
+/* Impacto (oscuro) */
+.metric-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.mcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px;color:#e6ebf6;transition:.25s;display:block;position:relative;overflow:hidden}
+.mcard::before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;right:-50px;top:-50px;background:radial-gradient(circle,rgba(244,162,89,.25),transparent 70%)}
+a.mcard:hover{transform:translateY(-4px);text-decoration:none;border-color:rgba(244,162,89,.5)}
+.mhead{font-weight:600;font-size:.92rem;display:flex;align-items:center;gap:10px;color:#fff}
+.mhead .tile{--s:38px;border-radius:11px}
+.mhead .tile{box-shadow:none}
+.mbig{font-family:Fraunces,serif;font-weight:700;font-size:2.7rem;color:var(--amber);line-height:1.1;margin:16px 0 10px}
+.mbig span{font-family:Inter,sans-serif;font-size:.8rem;font-weight:500;color:#9aa6c2;margin-left:6px}
+.mrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px dashed rgba(255,255,255,.15);padding-top:12px}
+.mrow div{font-size:.74rem;color:#9aa6c2}
+.mrow b{display:block;font-size:1.15rem;color:#fff}
+.mdate{font-size:.74rem;color:var(--teal-l);margin-top:10px}
+.impact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:16px}
+.impact-grid>*{min-width:0}
+.panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:24px}
+.panel .sub{color:var(--amber)}
+.panel .sub .ic{color:#fff}
+.bars{display:grid;gap:16px}
+.bar{display:grid;grid-template-columns:130px 1fr 52px;gap:10px;align-items:center;font-size:.84rem}
+.bar span{color:#b9c2d8}
+.bar b{text-align:right;color:#fff}
+.track{height:12px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.reveal.in .fill{width:var(--w)}
+.tscroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:520px}
+th{color:var(--amber);font-weight:600;text-align:center;padding:9px 8px;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid rgba(255,255,255,.18)}
+th:first-child,td:first-child{text-align:left}
+td{padding:10px 8px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08);color:#dfe5f2}
+td:first-child{font-weight:600;color:#fff}
+tbody tr:hover{background:rgba(255,255,255,.04)}
+.note{font-size:.76rem;color:#8e9ab6;margin-top:12px}
+
+/* Publicaciones */
+.search{flex:1;min-width:220px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 40px;border-radius:999px;border:1px solid var(--line);font:inherit;font-size:.9rem;background:#fff}
+.search input:focus{outline:2px solid var(--amber);border-color:transparent}
+.search .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--night-600)}
+.count{font-size:.85rem;color:var(--muted);margin-bottom:12px}
+.pubs{display:grid;gap:12px}
+.pub{display:grid;grid-template-columns:84px 1fr;gap:18px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--k);border-radius:14px;padding:16px 18px;transition:.2s}
+.pub:hover{box-shadow:var(--shadow);transform:translateX(3px)}
+.pub .yr{font-family:Fraunces,serif;font-weight:700;font-size:1.4rem;color:var(--night-800);line-height:1}
+.pub .kind{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--k)}
+.pub h3{font-family:Inter,sans-serif;font-size:.97rem;font-weight:700;color:var(--night-900);margin-bottom:4px}
+.pub .au{font-size:.84rem;color:var(--muted)}
+.pub .au b{color:var(--night-800);background:linear-gradient(transparent 60%,var(--amber-l) 60%)}
+.pub .src{font-size:.84rem;color:var(--teal-d);font-style:italic;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:2px}
+.doi{display:inline-flex;align-items:center;gap:4px;font-style:normal;font-weight:600;font-size:.76rem;padding:2px 9px;border-radius:999px;background:var(--sand);color:var(--night-700)}
+
+/* Dirección */
+.sup{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sup .card{display:flex;gap:18px;align-items:flex-start}
+.sup h3{font-family:Inter,sans-serif;font-size:.96rem;font-weight:700;color:var(--night-900)}
+.sup p{font-size:.84rem;color:var(--muted)}
+
+/* Contacto */
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.citem{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:12px}
+.citem h3{font-family:Inter,sans-serif;font-size:.76rem;text-transform:uppercase;letter-spacing:.14em;color:var(--amber)}
+.citem a,.citem p{color:#fff;font-size:.95rem}
+footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;font-size:.82rem}
+#top{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--amber-l),var(--amber));color:var(--night-950);border:0;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.3s;z-index:40;display:grid;place-items:center}
+#top.show{opacity:1;pointer-events:auto}
+
+@media (max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;text-align:center;justify-items:center;gap:56px}
+  .kicker{justify-content:center}
+  .chips,.btns{justify-content:center}
+  .portrait{order:-1;width:min(300px,72vw)}
+  .about,.two,.impact-grid,.book-list{grid-template-columns:1fr}
+  .lines,.courses,.cgrid,.metric-cards{grid-template-columns:1fr 1fr}
+  .proj-grid,.sup,.theses,.others{grid-template-columns:1fr}
+  .links{position:fixed;top:68px;left:0;right:0;flex-direction:column;background:rgba(7,13,28,.97);padding:12px 16px;display:none}
+  .links.open{display:flex}
+  .burger{display:block}
+}
+@media (max-width:580px){
+  .lines,.courses,.cgrid,.metric-cards,.stats{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr;gap:6px}
+  .bar{grid-template-columns:100px 1fr 46px}
+  section{padding:76px 0}
+  .sec-head{gap:14px}
+  .f3{display:none}
+  .float{font-size:.7rem;padding:8px 10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     SPRITE DE ICONOS PROPIOS (trazo + relleno de acento)
+     ========================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.5" style="fill:var(--ac);stroke:none"/><circle cx="12" cy="8" r="4"/><path d="M4 21c.6-4 3.8-6.5 8-6.5s7.4 2.5 8 6.5"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="18" cy="6" r="3.2" style="fill:var(--ac);stroke:none"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="6" rx="2" style="fill:var(--ac);stroke:none"/><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18M12 12v2"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5z" style="fill:var(--ac);stroke:none"/><path d="M12 4 2 9l10 5 10-5zM6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5M22 9v6"/></symbol>
+<symbol id="i-board" viewBox="0 0 24 24"><rect x="8" y="3" width="13" height="10" rx="1.5" style="fill:var(--ac);stroke:none"/><rect x="8" y="3" width="13" height="10" rx="1.5"/><path d="M11 10l2.5-2.5 2 1.5L18.5 6"/><circle cx="5" cy="14" r="2"/><path d="M1.5 21c.3-2.4 1.7-3.8 3.5-3.8 1.6 0 2.8 1 3.4 2.5M6.5 16l4-3"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" style="fill:var(--ac);stroke:none"/><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5.5" style="fill:var(--ac);stroke:none"/><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6M3 4v4h4M12 8v4l3 2"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C6.5 4 9.5 4 12 5.5V20c-2.5-1.5-5.5-1.5-8 0z" style="fill:var(--ac);stroke:none"/><path d="M12 5.5C9.5 4 6.5 4 4 5.5V20c2.5-1.5 5.5-1.5 8 0 2.5-1.5 5.5-1.5 8 0V5.5C17.5 4 14.5 4 12 5.5zM12 5.5V20"/></symbol>
+<symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6" style="fill:var(--ac);stroke:none"/><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M6.5 6.5l3.6 3.6M17.5 6.5l-3.6 3.6M6.5 17.5l3.6-3.6M17.5 17.5l-3.6-3.6"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0z" style="fill:var(--ac);stroke:none"/><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1.5A3.5 3.5 0 0 0 7.5 11M17 6h3v1.5a3.5 3.5 0 0 1-3.5 3.5M12 14v3M8 21h8M9.5 17h5v4h-5z"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><rect x="4" y="7" width="6" height="7" rx="2" style="fill:var(--ac);stroke:none"/><rect x="14" y="7" width="6" height="7" rx="2" style="fill:var(--ac);stroke:none"/><path d="M10 7H6a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4V9.5M10 12v1a5 5 0 0 1-4 5M20 7h-4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4V9.5M20 12v1a5 5 0 0 1-4 5"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 21v-5l4.5-4.5 4 3L20 6v15z" style="fill:var(--ac);stroke:none;opacity:.7"/><path d="M3 3v18h18M6.5 15l4-4 4 3 5.5-6M16 8h4v4"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v6h14V8z" style="fill:var(--ac);stroke:none"/><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h4"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" style="fill:var(--ac);stroke:none;opacity:.5"/><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 7l9 6.5L21 7V5H3z" style="fill:var(--ac);stroke:none"/><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><circle cx="17.5" cy="6.5" r="3.5" style="fill:var(--ac);stroke:none"/><path d="M5 3h3.5l1.5 4.5-2 1.5a12 12 0 0 0 7 7l1.5-2 4.5 1.5V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-uni" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5z" style="fill:var(--ac);stroke:none"/><path d="M3 9l9-5 9 5M4 9h16M6 9v8M10 9v8M14 9v8M18 9v8M4 17h16M3 20h18"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><circle cx="12" cy="9.5" r="4" style="fill:var(--ac);stroke:none"/><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="5" rx="2" style="fill:var(--ac);stroke:none"/><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15.5l2 2 4-4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 1 9 9h-9z" style="fill:var(--ac);stroke:none"/><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+<symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z" style="fill:var(--ac);stroke:none"/><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></symbol>
+<symbol id="i-team" viewBox="0 0 24 24"><circle cx="16.5" cy="9" r="3" style="fill:var(--ac);stroke:none"/><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.4-3.5 2.8-5.5 6-5.5s5.6 2 6 5.5M16.5 6a3 3 0 0 1 0 6M16 14.5c2.6 0 4.6 1.6 5 4.5"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" style="fill:var(--ac);stroke:none;opacity:.6"/><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7.5 10.8h5.5M7.5 13.2h5.5"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5" style="fill:var(--ac);stroke:none"/><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.5 5 2.5-1.5-7.5"/></symbol>
+<symbol id="i-dna" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" style="fill:var(--ac);stroke:none"/><path d="M7 3c0 4.5 10 4.5 10 9s-10 4.5-10 9M17 3c0 4.5-10 4.5-10 9s10 4.5 10 9M8.5 5.5h7M8.5 18.5h7"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><rect x="15" y="4" width="4" height="16" style="fill:var(--ac);stroke:none"/><path d="M3 21h18"/><rect x="5" y="12" width="4" height="8" rx=".5"/><rect x="10" y="8" width="4" height="12" rx=".5"/><rect x="15" y="4" width="4" height="16" rx=".5"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c-.5 10-5.5 15-15 15z" style="fill:var(--ac);stroke:none"/><path d="M5 19C5 10 10 5 20 4c-.5 10-5.5 15-15 15zM5 19c3-4 6-7 10-9"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" style="fill:var(--ac);stroke:none"/><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v8H6z" style="fill:var(--ac);stroke:none"/><path d="M6 3h12v18l-6-4-6 4z"/></symbol>
+<symbol id="i-orcid" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" style="fill:#a6ce39;stroke:none"/><path d="M8.5 10v6.5M11.5 9.5h2a3.5 3.5 0 0 1 0 7h-2z" style="stroke:#fff"/><circle cx="8.5" cy="7.6" r=".9" style="fill:#fff;stroke:none"/></symbol>
+<symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 2 9.5h20z" style="fill:var(--ac);stroke:none"/><path d="M12 3 2 9.5h20z"/><circle cx="12" cy="15" r="4.5"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="2" style="fill:var(--ac);stroke:none"/><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14.5h18M9 9v11"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" style="fill:var(--ac);stroke:none;opacity:.6"/><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 3l8 4.5-8 4.5-8-4.5z" style="fill:var(--ac);stroke:none"/><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></symbol>
+<symbol id="i-robot" viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="11" rx="3" style="fill:var(--ac);stroke:none"/><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V5.2M9.5 16h5M3 12v3M21 12v3"/><circle cx="12" cy="4.2" r="1.2"/><circle cx="9.5" cy="12.5" r="1.1" style="fill:currentColor"/><circle cx="14.5" cy="12.5" r="1.1" style="fill:currentColor"/></symbol>
+<symbol id="i-dice" viewBox="0 0 24 24"><rect x="3" y="3" width="13" height="13" rx="2.5" style="fill:var(--ac);stroke:none"/><rect x="3" y="3" width="13" height="13" rx="2.5"/><path d="M19 8.5l1.5.4a2 2 0 0 1 1.4 2.4l-2.4 9a2 2 0 0 1-2.4 1.4l-7.8-2.1"/><circle cx="6.8" cy="6.8" r="1" style="fill:currentColor"/><circle cx="9.5" cy="9.5" r="1" style="fill:currentColor"/><circle cx="12.2" cy="12.2" r="1" style="fill:currentColor"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M2 13a3 3 0 0 0 6 0zM16 13a3 3 0 0 0 6 0z" style="fill:var(--ac);stroke:none"/><path d="M12 4v16M7 20h10M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/><circle cx="12" cy="4" r="1.2"/></symbol>
+<symbol id="i-pill" viewBox="0 0 24 24"><path d="M4.5 13.5 9 9l6 6-4.5 4.5a4.24 4.24 0 0 1-6-6z" style="fill:var(--ac);stroke:none"/><path d="M4.5 13.5l9-9a4.24 4.24 0 0 1 6 6l-9 9a4.24 4.24 0 0 1-6-6zM9 9l6 6"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M6.5 15h11l2.3 4.2A1.2 1.2 0 0 1 18.8 21H5.2a1.2 1.2 0 0 1-1-1.8z" style="fill:var(--ac);stroke:none"/><path d="M9 3h6M10 3v6L4.2 19.2A1.2 1.2 0 0 0 5.2 21h13.6a1.2 1.2 0 0 0 1-1.8L14 9V3M7 15h10"/></symbol>
+<symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5" style="fill:var(--ac);stroke:none"/><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M8 19.5c0-3 4-4.5 4-7.5 0 3 4 4.5 4 7.5z" style="fill:var(--ac);stroke:none"/><path d="M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9z" style="fill:var(--ac);stroke:none"/><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-sigma" viewBox="0 0 24 24"><circle cx="17" cy="17" r="4" style="fill:var(--ac);stroke:none"/><path d="M18 5H6l6 7-6 7h12"/></symbol>
+<symbol id="i-calc" viewBox="0 0 24 24"><rect x="7" y="5" width="10" height="4" style="fill:var(--ac);stroke:none"/><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="7" y="5" width="10" height="4" rx=".5"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01" style="stroke-width:2.4"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 3 11l9 2z" style="fill:var(--ac);stroke:none"/><path d="M21 3 3 11l9 2 3 8zM12 13l9-10"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M3 19c4 0 5-13 9-13s5 13 9 13z" style="fill:var(--ac);stroke:none;opacity:.7"/><path d="M3 20h18M3 19c4 0 5-13 9-13s5 13 9 13M12 6v13"/></symbol>
+</defs>
+</svg>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="mono">JM</span> Javier Morales</a>
+    <button class="burger" aria-label="Menú" onclick="document.querySelector('.links').classList.toggle('open')"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <ul class="links">
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#trayectoria">Trayectoria</a></li>
+      <li><a href="#docencia">Docencia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#tesis">Tesis</a></li>
+      <li><a href="#impacto">Impacto</a></li>
+      <li><a href="#publicaciones">Publicaciones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="inicio">
+  <div class="grid-bg"></div>
+  <canvas id="net"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="kicker">Estadística · Ciencia de Datos · IA</div>
+      <h1>Javier Morales <em>Socuéllamos</em></h1>
+      <p class="role">Profesor Titular de Universidad en el Departamento de Estadística, Matemáticas e Informática de la Universidad Miguel Hernández de Elche. Miembro del Instituto Universitario de Investigación en Matemáticas, Ciencia de Datos e Inteligencia Artificial (i-MInD).</p>
+      <div class="chips">
+        <span class="chip"><svg class="ic"><use href="#i-uni"/></svg> Universidad Miguel Hernández</span>
+        <span class="chip"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del i-MInD</span>
+        <span class="chip"><svg class="ic teal"><use href="#i-pin"/></svg> Elche, España</span>
+        <span class="chip"><svg class="ic"><use href="#i-cal"/></svg> +30 años de trayectoria</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#publicaciones"><svg class="ic" style="--ac:rgba(255,255,255,.6)"><use href="#i-book"/></svg> Ver publicaciones</a>
+        <a class="btn ghost" href="mailto:j.morales@umh.es"><svg class="ic"><use href="#i-mail"/></svg> Contactar</a>
+        <a class="btn ghost" href="https://orcid.org/0000-0002-7814-5176" target="_blank" rel="noopener"><svg class="ic"><use href="#i-orcid"/></svg> ORCID</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="orbit"></div>
+      <div class="disc"><img src="data:image/webp;base64,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" alt="Fotografía de Javier Morales Socuéllamos"></div>
+    </div>
+  </div>
+  <a href="#perfil" class="scroll-hint" aria-label="Bajar"><svg class="ic"><use href="#i-down"/></svg></a>
+</header>
+
+<!-- ================= PERFIL ================= -->
+<section id="perfil">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-user"/></svg></span><div><span class="num">01 — Sobre mí</span><h2>Perfil</h2><p>Quién soy y en qué trabajo</p></div></div>
+    <div class="about">
+      <div class="reveal">
+        <p>Licenciado (1994) y Doctor en Ciencias Matemáticas (2002) por la Universitat de València, con una tesis dirigida por la Prof. M.ª Jesús Bayarri. Desde 1997 desarrollo mi carrera en la <strong>Universidad Miguel Hernández de Elche</strong>, donde soy Profesor Titular desde 2012 y miembro del <strong>Instituto Universitario de Investigación en Matemáticas, Ciencia de Datos e Inteligencia Artificial (i-MInD)</strong>.</p>
+        <p>Mi investigación se centra en la <strong>estadística bayesiana</strong> (detección de outliers, diseño en teoría de colas, métodos MCMC), la <strong>modelización espacial</strong> y la aplicación de técnicas multivariantes y quimiométricas a problemas medioambientales y agronómicos. En los últimos años he orientado mi trabajo hacia la <strong>inteligencia artificial y la predicción</strong>: selección y combinación automática de modelos de pronóstico y modelos de aprendizaje automático para el pronóstico cardiológico. En paralelo, impulso proyectos de <strong>innovación educativa</strong>, gamificación y competencia digital docente.</p>
+        <p>Actualmente imparto docencia en el Grado en Ciencia de Datos e Inteligencia Artificial, el Grado en Biotecnología y varios másteres oficiales.</p>
+        <a class="inst" href="https://cio.umh.es/" target="_blank" rel="noopener">
+          <span class="tile"><svg class="ic light"><use href="#i-network"/></svg></span>
+          <div><span class="inst-k">Instituto de investigación</span><b>i-MInD</b><span>Instituto Universitario de Investigación en Matemáticas, Ciencia de Datos e Inteligencia Artificial · UMH</span></div>
+          <svg class="ic go"><use href="#i-ext"/></svg>
+        </a>
+        <div class="ids">
+          <a href="https://orcid.org/0000-0002-7814-5176" target="_blank" rel="noopener"><svg class="ic"><use href="#i-orcid"/></svg> ORCID</a>
+          <a href="https://scholar.google.es/citations?user=OkUmSC0AAAAJ" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg> Google Scholar</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=55652737800" target="_blank" rel="noopener"><svg class="ic teal"><use href="#i-search"/></svg> Scopus</a>
+          <a href="https://www.webofscience.com/wos/author/record/T-1171-2017" target="_blank" rel="noopener"><svg class="ic"><use href="#i-flask"/></svg> ResearcherID</a>
+          <a href="https://dialnet.unirioja.es/metricas/investigador/1659518" target="_blank" rel="noopener"><svg class="ic teal"><use href="#i-bars"/></svg> Dialnet</a>
+          <a href="https://portalinvestigacion.umh.es/investigadores/2182589" target="_blank" rel="noopener"><svg class="ic"><use href="#i-uni"/></svg> Portal UMH</a>
+          <a href="https://cio.umh.es/" target="_blank" rel="noopener"><svg class="ic teal"><use href="#i-network"/></svg> i-MInD</a>
+        </div>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n" data-count="1097">0</div><div class="l">Citas en Google Scholar</div><svg class="ic bgic"><use href="#i-quote"/></svg></div>
+        <div class="stat"><div class="n" data-count="16">0</div><div class="l">Índice h (Google Scholar)</div><svg class="ic bgic"><use href="#i-trend"/></svg></div>
+        <div class="stat"><div class="n" data-count="25">0</div><div class="l">Artículos en revistas científicas</div><svg class="ic bgic"><use href="#i-doc"/></svg></div>
+        <div class="stat"><div class="n" data-count="41">0</div><div class="l">Proyectos y contratos de I+D+i</div><svg class="ic bgic"><use href="#i-network"/></svg></div>
+      </div>
+    </div>
+
+    <h3 class="sub reveal" style="margin-top:60px"><svg class="ic"><use href="#i-search"/></svg> Líneas de investigación</h3>
+    <div class="lines">
+      <!-- 1. IA y predicción -->
+      <div class="line reveal"><div class="art"><svg viewBox="0 0 220 100">
+        <path d="M120 52 L210 20 L210 80 Z" fill="#bfe6df" opacity=".7"/>
+        <polyline points="10,70 30,58 50,64 70,44 90,52 110,38 120,46" fill="none" stroke="#1a2a50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="120,46 145,40 170,44 195,34 210,36" fill="none" stroke="#f4a259" stroke-width="3" stroke-dasharray="6 5" stroke-linecap="round"/>
+        <line x1="120" y1="12" x2="120" y2="92" stroke="#1a2a50" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
+        <g fill="#1a2a50"><circle cx="30" cy="58" r="3.5"/><circle cx="70" cy="44" r="3.5"/><circle cx="110" cy="38" r="3.5"/></g>
+        <circle cx="210" cy="36" r="6" fill="#f4a259"/><circle cx="210" cy="36" r="11" fill="none" stroke="#f4a259" opacity=".4"/>
+      </svg></div><div class="txt"><h3>Inteligencia artificial y predicción</h3><p>Selección y combinación automática de modelos de pronóstico y árboles de clasificación con IA en cardiología.</p></div></div>
+      <!-- 2. Bayes -->
+      <div class="line reveal"><div class="art"><svg viewBox="0 0 220 100">
+        <path d="M10 88 C60 88 70 40 110 40 S160 88 210 88" fill="#bfe6df" stroke="#2a9d8f" stroke-width="2.5"/>
+        <path d="M70 88 C105 88 110 14 130 14 S155 88 190 88" fill="#f4a259" opacity=".85"/>
+        <path d="M70 88 C105 88 110 14 130 14 S155 88 190 88" fill="none" stroke="#e2873a" stroke-width="2.5"/>
+        <line x1="10" y1="89" x2="210" y2="89" stroke="#1a2a50" stroke-width="2"/>
+        <line x1="130" y1="10" x2="130" y2="89" stroke="#1a2a50" stroke-dasharray="3 4" opacity=".55"/>
+        <text x="16" y="22" font-family="Georgia,serif" font-style="italic" font-size="15" fill="#1a2a50">π(θ | x)</text>
+      </svg></div><div class="txt"><h3>Inferencia bayesiana</h3><p>Medidas bayesianas de sorpresa, detección de outliers y distribuciones predictivas mediante MCMC.</p></div></div>
+      <!-- 3. Colas -->
+      <div class="line reveal"><div class="art"><svg viewBox="0 0 220 100">
+        <rect x="150" y="22" width="56" height="56" rx="12" fill="#1a2a50"/>
+        <circle cx="178" cy="50" r="14" fill="none" stroke="#f4a259" stroke-width="3"/><path d="M178 42v8l6 4" stroke="#f4a259" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <g fill="#2a9d8f"><circle cx="26" cy="50" r="9" opacity=".45"/><circle cx="56" cy="50" r="9" opacity=".6"/><circle cx="86" cy="50" r="9" opacity=".8"/><circle cx="116" cy="50" r="9"/></g>
+        <path d="M128 50h14m-6-6 6 6-6 6" stroke="#1a2a50" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 70h118" stroke="#1a2a50" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round" opacity=".5"/>
+      </svg></div><div class="txt"><h3>Teoría de colas y simulación</h3><p>Diseño bayesiano en sistemas de espera de fuente finita, con aplicaciones al mantenimiento aeronáutico.</p></div></div>
+      <!-- 4. Espacial -->
+      <div class="line reveal"><div class="art"><svg viewBox="0 0 220 100">
+        <path d="M40 50c0-28 50-38 80-30s70 8 70 32-40 40-80 38S40 78 40 50z" fill="#bfe6df"/>
+        <path d="M70 50c0-16 30-22 50-17s40 6 40 20-26 23-50 22-40-9-40-25z" fill="#2a9d8f" opacity=".55"/>
+        <path d="M98 50c0-7 12-10 22-8s16 3 16 9-11 10-21 9-17-4-17-10z" fill="#f4a259"/>
+        <g fill="#1a2a50"><circle cx="30" cy="20" r="2.5"/><circle cx="195" cy="20" r="2.5"/><circle cx="60" cy="84" r="2.5"/><circle cx="170" cy="80" r="2.5"/><circle cx="118" cy="50" r="3.5"/></g>
+      </svg></div><div class="txt"><h3>Estadística espacial</h3><p>Modelos jerárquicos y corregionalizados para índices bioclimáticos.</p></div></div>
+      <!-- 5. Medio ambiente -->
+      <div class="line reveal"><div class="art"><svg viewBox="0 0 220 100">
+        <path d="M10 70 C40 60 50 30 80 40 S120 80 150 50 S190 30 210 40" fill="none" stroke="#2a9d8f" stroke-width="3"/>
+        <path d="M10 80 C40 72 55 48 80 54 S120 86 150 64 S190 48 210 56" fill="none" stroke="#f4a259" stroke-width="3"/>
+        <path d="M10 88 C40 84 55 66 80 68 S120 92 150 78 S190 66 210 70" fill="none" stroke="#1a2a50" stroke-width="2" opacity=".5"/>
+        <path d="M160 32C160 14 172 6 196 4c-1 20-12 30-36 28z" fill="#2a9d8f"/><path d="M160 32c6-8 14-15 26-20" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg></div><div class="txt"><h3>Medio ambiente y quimiometría</h3><p>Calidad de suelos, compostaje y lodos de depuradora mediante NIRS y regresión multivariante.</p></div></div>
+      <!-- 6. Innovación educativa -->
+      <div class="line reveal"><div class="art"><svg viewBox="0 0 220 100">
+        <rect x="24" y="62" width="22" height="28" rx="4" fill="#bfe6df"/><rect x="54" y="48" width="22" height="42" rx="4" fill="#2a9d8f" opacity=".7"/><rect x="84" y="34" width="22" height="56" rx="4" fill="#2a9d8f"/>
+        <circle cx="160" cy="40" r="24" fill="#f4a259"/><circle cx="160" cy="40" r="34" fill="none" stroke="#f4a259" opacity=".35" stroke-width="2"/>
+        <path d="M150 68h20M152 76h16" stroke="#1a2a50" stroke-width="3" stroke-linecap="round"/>
+        <path d="M152 44l6 6 10-12" stroke="#1a2a50" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="16" y1="90" x2="116" y2="90" stroke="#1a2a50" stroke-width="2"/>
+      </svg></div><div class="txt"><h3>Innovación educativa</h3><p>Competencia digital docente, metodologías activas, gamificación y evaluación clínica (ECOE).</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAYECTORIA ================= -->
+<section id="trayectoria" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-route"/></svg></span><div><span class="num">02 — Recorrido</span><h2>Trayectoria</h2><p>Experiencia profesional y formación académica</p></div></div>
+    <div class="two">
+      <div>
+        <h3 class="sub reveal"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</h3>
+        <div class="tl">
+          <div class="tl-item now reveal"><div class="card"><span class="when">2012 – actualidad</span><h3>Profesor Titular de Universidad</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto i-MInD</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">2002 – 2012</span><h3>Profesor Contratado Doctor</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">2001 – 2002</span><h3>Profesor Asociado</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">1999 – 2001</span><h3>Ayudante de Universidad</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">1997 – 1999</span><h3>Ayudante de Escuela Universitaria</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">1995 – 1997</span><h3>Becario FPI</h3><p>Universitat de València · Dpto. Estadística e Investigación Operativa</p></div></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub reveal"><svg class="ic"><use href="#i-cap"/></svg> Formación académica</h3>
+        <div class="tl">
+          <div class="tl-item reveal"><div class="card"><span class="when">2002</span><h3>Doctor en Ciencias Matemáticas</h3><p>Facultad de Matemáticas, Universitat de València · Directora: M.ª Jesús Bayarri García</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">1995 – 1997</span><h3>Posgrado en Estadística e Investigación Operativa</h3><p>Facultad de Matemáticas, Universitat de València</p></div></div>
+          <div class="tl-item reveal"><div class="card"><span class="when">1994</span><h3>Licenciado en Matemáticas</h3><p>Facultad de Matemáticas, Universitat de València</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCENCIA ================= -->
+<section id="docencia">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-board"/></svg></span><div><span class="num">03 — Aula</span><h2>Docencia</h2><p>Organizada en Grado, Postgrado y Títulos propios</p></div></div>
+
+    <!-- ===== BLOQUE 1: GRADO ===== -->
+    <div class="tblock reveal">
+      <div class="tblock-head"><span class="tile"><svg class="ic light"><use href="#i-cap"/></svg></span><div><h3>Grado</h3><p>Grados, licenciaturas y diplomaturas</p></div><span class="cnt">+30 asignaturas desde 1997</span></div>
+      <div class="minisub">Docencia actual</div>
+      <div class="courses">
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-robot"/></svg></span><div class="lvl">Grado en Ciencia de Datos e IA</div><h3>Machine Learning 1: Clasificación y Reducción de la Dimensión</h3><p>Teoría, problemas y prácticas de laboratorio</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2026 – actualidad</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-dice"/></svg></span><div class="lvl">Grado en Ciencia de Datos e IA</div><h3>Simulación y Cadenas de Markov</h3><p>Teoría, problemas y prácticas de laboratorio</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2025 – actualidad</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-dna"/></svg></span><div class="lvl">Grado en Biotecnología</div><h3>Modelos Estadísticos</h3><p>Teoría, problemas y prácticas de laboratorio</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2017 – actualidad</div></div>
+      </div>
+      <details class="more"><summary>Docencia anterior en grado <svg class="ic"><use href="#i-down"/></svg></summary><div class="body">
+        <div class="minisub">Grados</div><div class="tagrow"><span class="tag">Estadística · Ing. Informática en Tecnologías de la Información (2024–26)</span><span class="tag">Introducción a la Estadística · Seguridad Pública y Privada (2018–26)</span><span class="tag">Simulación de Procesos y Sistemas · Estadística Empresarial (2021–25)</span><span class="tag">Mejora de Procesos · Estadística Empresarial (2015–17)</span><span class="tag">Estadística · Grado en Periodismo (2010–18)</span></div>
+        <div class="minisub" style="margin-top:16px">Licenciaturas</div><div class="tagrow"><span class="tag">Estadística · ADE (2007–14)</span><span class="tag">Introducción a la Econometría · ADE (2000–01 y 2007–13)</span><span class="tag">Técnicas de Investigación Social · ADE (2007–14) y Periodismo (2006–08)</span><span class="tag">Técnicas Estadísticas en Periodismo (2007–08)</span><span class="tag">Inferencia y Decisión · CC. y Técnicas Estadísticas (2013–14)</span><span class="tag">Análisis de Datos en CC. del Medio Ambiente · CC. y Técnicas Estadísticas (2003–13)</span><span class="tag">Análisis Multivariante Avanzado · CC. y Técnicas Estadísticas (1998–2003)</span><span class="tag">Diseño de Experimentos · CC. y Técnicas Estadísticas (1998–99)</span><span class="tag">Análisis Estadístico Multivariante · Investigación y Técnicas de Mercado (1997–2002)</span><span class="tag">Matemática Aplicada · Farmacia (2002–04)</span><span class="tag">Geografía Humana y Demografía · Antropología Social y Cultural (1999–2002)</span></div>
+        <div class="minisub" style="margin-top:16px">Diplomatura en Estadística</div><div class="tagrow"><span class="tag">Análisis Multivariante (2001–07)</span><span class="tag">Modelos Lineales (2004–07)</span><span class="tag">Herramientas para la Ingeniería de Datos (2002–04)</span><span class="tag">Estadística Pública (2002–03)</span><span class="tag">Análisis de Datos (1997–2000)</span><span class="tag">Técnicas Estadísticas en Análisis de Mercados (1997–98)</span></div>
+      </div></details>
+    </div>
+
+    <!-- ===== BLOQUE 2: POSTGRADO ===== -->
+    <div class="tblock reveal">
+      <div class="tblock-head"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><h3>Postgrado</h3><p>Másteres oficiales y programas de doctorado</p></div><span class="cnt">Máster y doctorado</span></div>
+      <div class="minisub">Másteres oficiales · docencia actual</div>
+      <div class="courses">
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-scale"/></svg></span><div class="lvl">Máster en Contabilidad y Finanzas Avanzadas</div><h3>Métodos Cuantitativos para la Toma de Decisiones</h3><p>Máster oficial</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2020 – actualidad</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-pill"/></svg></span><div class="lvl">Máster en Neuropsicofarmacología Traslacional</div><h3>Estadística en Investigación Experimental y Clínica</h3><p>Máster oficial</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2015 – actualidad</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-flask"/></svg></span><div class="lvl">Máster en Neuropsicofarmacología Traslacional</div><h3>Diseño y Ejecución de Procedimientos Experimentales con Animales</h3><p>Máster oficial</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2015 – actualidad</div></div>
+      </div>
+      <div class="minisub">Másteres oficiales · docencia anterior</div>
+      <div class="courses">
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-leaf"/></svg></span><div class="lvl">Máster en Gestión, Tratamiento y Valorización de Residuos Orgánicos</div><h3>Herramientas Metodológicas para la Investigación</h3><p>Máster oficial</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2013 – 2020</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-bars"/></svg></span><div class="lvl">Máster en Gestión, Tratamiento y Valorización de Residuos Orgánicos</div><h3>Diseño de Experimentos y Análisis de Datos</h3><p>Máster oficial</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2009 – 2013</div></div>
+      </div>
+      <div class="minisub">Programas de doctorado</div>
+      <div class="courses">
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-dna"/></svg></span><div class="lvl">Programa de Doctorado en Anatomía Quirúrgica y Aplicativa</div><h3>Bioestadística Aplicada</h3><p>Doctorado · 5 ediciones</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2004 – 2009</div></div>
+        <a class="course reveal link-card" href="#tesis"><span class="tile sm"><svg class="ic light"><use href="#i-award"/></svg></span><div class="lvl">Investigación</div><h3>Dirección de tesis doctorales</h3><p>2 tesis dirigidas, una de ellas con Sobresaliente Cum Laude</p><div class="yrs"><svg class="ic"><use href="#i-ext"/></svg> Ver en la sección de investigación</div></a>
+      </div>
+    </div>
+
+    <!-- ===== BLOQUE 3: TÍTULOS PROPIOS ===== -->
+    <div class="tblock reveal">
+      <div class="tblock-head"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><h3>Títulos propios</h3><p>Cursos de especialización y formación no reglada</p></div><span class="cnt">2005 – 2009</span></div>
+      <div class="courses">
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-sigma"/></svg></span><div class="lvl">Curso · 8 h</div><h3>Sacar el máximo provecho a tus datos utilizando toda la información disponible: Estadística Bayesiana</h3><p>Universidad Miguel Hernández de Elche</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2006</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-team"/></svg></span><div class="lvl">Curso · 8 h</div><h3>Estadística Aplicada a las Ciencias Sociales</h3><p>Universidad Miguel Hernández de Elche</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2005</div></div>
+        <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-doc"/></svg></span><div class="lvl">Curso de formación del profesorado universitario · 8 h</div><h3>El diseño de la guía docente: un ejemplo de ciencias experimentales</h3><p>Universidad Miguel Hernández de Elche · 2 ediciones</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2008 – 2009</div></div>
+      </div>
+    </div>
+
+    <h3 class="sub reveal" style="margin-top:44px"><svg class="ic"><use href="#i-book"/></svg> Publicaciones docentes</h3>
+    <div class="book-list">
+      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-laptop"/></svg></span><div><b>TICs para la docencia y el aprendizaje</b><span>Mayoral, Aparicio, Ortiz, Quesada-Martínez, Morales · Editorial Electrónica UMH, 2019</span></div></div>
+      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-team"/></svg></span><div><b>Entornos Personales de Aprendizaje en la Docencia de Estadística</b><span>Capítulo en <em>Experiencias Docentes en Estadística</em> · UPCT, 2014</span></div></div>
+      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-hourglass"/></svg></span><div><b>Apuntes de Teoría de Colas: Simulación y Análisis de Sistemas de Espera</b><span>Mayoral, Morales, Barber, Aparicio · UMH, 2007</span></div></div>
+      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-shield"/></svg></span><div><b>Modelos Estadísticos para Pérdidas y Reclamaciones</b><span>Mayoral, Morales, Barber, Aparicio · UMH, 2007</span></div></div>
+      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-sigma"/></svg></span><div><b>Modelos Lineales Generalizados</b><span>Mayoral, Morales · UMH, 2001</span></div></div>
+      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-calc"/></svg></span><div><b>Pràctiques d'Estadística Matemàtica</b><span>Abellán, Álvarez-Valdés, Aniceto, Armero, Bayarri et al. · Universitat de València, 2000</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BANDA INVESTIGACIÓN ================= -->
+<div class="research-band">
+  <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-flask"/></svg></span><div><span>Bloque de investigación</span><h2>Investigación</h2><p>Proyectos · Tesis doctorales · Impacto · Publicaciones</p></div></div>
+</div>
+<!-- ================= PROYECTOS ================= -->
+<section id="proyectos" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-network"/></svg></span><div><span class="num">04 — Investigación · Proyectos</span><h2>Proyectos de investigación</h2><p>Proyectos competitivos, innovación docente y transferencia</p></div></div>
+    <div class="toolbar reveal" id="projFilters">
+      <button class="filter on" data-f="all">Todos</button>
+      <button class="filter" data-f="inv"><svg class="ic"><use href="#i-flask"/></svg> Investigación</button>
+      <button class="filter" data-f="doc"><svg class="ic"><use href="#i-board"/></svg> Innovación y divulgación</button>
+      <button class="filter" data-f="tra"><svg class="ic"><use href="#i-briefcase"/></svg> Transferencia</button>
+    </div>
+    <div class="proj-grid" id="projList"></div>
+  </div>
+</section>
+
+<!-- ================= TESIS (INVESTIGACIÓN) ================= -->
+<section id="tesis" class="thesis-sec">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><span class="num">05 — Investigación · Formación de investigadores</span><h2>Tesis doctorales dirigidas</h2><p>Doctores formados y producción científica derivada</p></div></div>
+    <div class="theses">
+      <article class="thesis reveal">
+        <div class="th-top"><span class="th-year">2026</span><span class="th-badge new"><svg class="ic"><use href="#i-star"/></svg> Tesis más reciente</span></div>
+        <h3>Optimización del rendimiento predictivo mediante la selección de configuraciones de modelos: un enfoque de conjunto</h3>
+        <div class="th-who"><span class="tile sm"><svg class="ic light"><use href="#i-user"/></svg></span><div><b>Carlos García Aroca</b><span>Doctorando · Universidad Miguel Hernández de Elche</span></div></div>
+        <div class="th-tags"><span><svg class="ic"><use href="#i-robot"/></svg> Inteligencia artificial</span><span><svg class="ic teal"><use href="#i-trend"/></svg> Predicción de series temporales</span></div>
+        <div class="th-pubs"><span class="th-k">Publicaciones derivadas</span>
+          <a href="https://doi.org/10.1016/j.eswa.2023.121636" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>Expert Systems with Applications</em>, 2024</a>
+          <a href="https://doi.org/10.1016/j.simpa.2024.100644" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>Software Impacts</em>, 2024</a>
+        </div>
+      </article>
+      <article class="thesis reveal">
+        <div class="th-top"><span class="th-year">2009</span><span class="th-badge"><svg class="ic"><use href="#i-award"/></svg> Sobresaliente Cum Laude</span></div>
+        <h3>Modelos geoestadísticos para el estudio de índices bioclimáticos</h3>
+        <div class="th-who"><span class="tile sm"><svg class="ic light"><use href="#i-user"/></svg></span><div><b>Josep Xavier Barber Vallés</b><span>Programa de Estadística e Investigación Operativa · UMH · Codirección con A. López-Quílez</span></div></div>
+        <div class="th-tags"><span><svg class="ic"><use href="#i-pin"/></svg> Estadística espacial</span><span><svg class="ic teal"><use href="#i-bell"/></svg> Modelos bayesianos</span></div>
+        <div class="th-pubs"><span class="th-k">Publicaciones derivadas</span>
+          <a href="https://doi.org/10.1007/s13253-018-00345-z" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>J. of Agricultural, Biological and Environmental Statistics</em>, 2019</a>
+          <a href="https://www.idescat.cat/sort/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>SORT – Statistics and Operations Research Transactions</em>, 2017</a>
+        </div>
+      </article>
+    </div>
+    <h3 class="sub reveal" style="margin-top:40px"><svg class="ic"><use href="#i-cap"/></svg> Otros trabajos de investigación dirigidos</h3>
+    <div class="others">
+      <div class="card reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-leaf"/></svg></span><div><span class="when">Memoria Fin de Máster · 2011</span><h4>Estimación de parámetros de calidad del compost mediante espectroscopía NIRS</h4><p>Luis Nazario Gálvez Sola · Sobresaliente · Codirección con R. Moral</p></div></div>
+      <div class="card reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-dna"/></svg></span><div><span class="when">Proyecto fin de carrera · 2023</span><h4>Estudio del perfil transcriptómico de muestras de glioblastoma humanas</h4><p>Nuria Termes Sabater</p></div></div>
+      <div class="card reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-bars"/></svg></span><div><span class="when">Proyecto fin de carrera · 2023</span><h4>Evolución estadística de separaciones, nulidades y divorcios (2013-2020)</h4><p>Jorge Pliego Marín</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IMPACTO ================= -->
+<section id="impacto" class="dark">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-trophy"/></svg></span><div><span class="num">06 — Investigación · Bibliometría</span><h2>Indicadores de impacto</h2><p>Citas e índices bibliométricos según distintas fuentes</p></div></div>
+
+    <div class="metric-cards">
+      <a class="mcard reveal" href="https://scholar.google.es/citations?user=OkUmSC0AAAAJ" target="_blank" rel="noopener">
+        <div class="mhead"><span class="tile"><svg class="ic"><use href="#i-scholar"/></svg></span> Google Scholar</div>
+        <div class="mbig">1.097<span>citas</span></div>
+        <div class="mrow"><div><b>16</b>índice h</div><div><b>22</b>índice i10</div></div>
+        <div class="mdate">Actualizado 08/10/2026</div>
+      </a>
+      <div class="mcard reveal">
+        <div class="mhead"><span class="tile"><svg class="ic teal"><use href="#i-cube"/></svg></span> Dimensions</div>
+        <div class="mbig">544<span>citas</span></div>
+        <div class="mrow"><div><b>23</b>publ. citadas</div><div><b>23,65</b>media de citas</div></div>
+        <div class="mdate">86 citas en los últimos 2 años</div>
+      </div>
+      <div class="mcard reveal">
+        <div class="mhead"><span class="tile"><svg class="ic"><use href="#i-link"/></svg></span> OpenCitations</div>
+        <div class="mbig">503<span>citas</span></div>
+        <div class="mrow"><div><b>23</b>publ. citadas</div><div><b>21,87</b>media de citas</div></div>
+        <div class="mdate">Mediana: 8 citas por trabajo</div>
+      </div>
+      <a class="mcard reveal" href="https://dialnet.unirioja.es/metricas/investigador/1659518" target="_blank" rel="noopener">
+        <div class="mhead"><span class="tile"><svg class="ic teal"><use href="#i-bars"/></svg></span> Dialnet Métricas</div>
+        <div class="mbig">27<span>citas</span></div>
+        <div class="mrow"><div><b>3</b>índice h</div><div><b>1</b>índice h5</div></div>
+        <div class="mdate">Actualizado 19/10/2026</div>
+      </a>
+    </div>
+
+    <div class="impact-grid">
+      <div class="panel reveal">
+        <h3 class="sub"><svg class="ic"><use href="#i-bars"/></svg> Total de citas por fuente</h3>
+        <div class="bars">
+          <div class="bar"><span>Google Scholar</span><div class="track"><div class="fill" style="--w:100%"></div></div><b>1.097</b></div>
+          <div class="bar"><span>Dimensions</span><div class="track"><div class="fill" style="--w:49.6%"></div></div><b>544</b></div>
+          <div class="bar"><span>OpenCitations</span><div class="track"><div class="fill" style="--w:45.9%"></div></div><b>503</b></div>
+          <div class="bar"><span>Dimensions (2 años)</span><div class="track"><div class="fill" style="--w:7.8%"></div></div><b>86</b></div>
+          <div class="bar"><span>Dialnet</span><div class="track"><div class="fill" style="--w:2.5%"></div></div><b>27</b></div>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h3 class="sub"><svg class="ic"><use href="#i-table"/></svg> Detalle de citas</h3>
+        <div class="tscroll">
+        <table>
+          <thead><tr><th>Fuente</th><th>Publ. con citas</th><th>Total citas</th><th>Media</th><th>Mediana</th><th>Prom. autores</th><th>Mediana autores</th></tr></thead>
+          <tbody>
+            <tr><td>Dialnet Métricas</td><td>3</td><td>27</td><td>9,00</td><td>10,00</td><td>3,67</td><td>4,00</td></tr>
+            <tr><td>Dimensions</td><td>23</td><td>544</td><td>23,65</td><td>9,00</td><td>5,83</td><td>5,00</td></tr>
+            <tr><td>Dimensions (últimos 2 años)</td><td>23</td><td>86</td><td>3,74</td><td>2,00</td><td>5,83</td><td>5,00</td></tr>
+            <tr><td>OpenCitations</td><td>23</td><td>503</td><td>21,87</td><td>8,00</td><td>5,83</td><td>5,00</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="note">Fuente: Portal de Investigación UMH. Datos de Google Scholar a 08/10/2026 y de Dialnet a 19/10/2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PUBLICACIONES ================= -->
+<section id="publicaciones">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-book"/></svg></span><div><span class="num">07 — Investigación · Producción científica</span><h2>Publicaciones</h2><p>Artículos, capítulos, libros y congresos</p></div></div>
+    <div class="toolbar reveal" id="pubFilters">
+      <button class="filter on" data-f="all">Todas</button>
+      <button class="filter" data-f="art"><svg class="ic"><use href="#i-doc"/></svg> Artículos</button>
+      <button class="filter" data-f="cap"><svg class="ic"><use href="#i-bookmark"/></svg> Capítulos</button>
+      <button class="filter" data-f="lib"><svg class="ic"><use href="#i-book"/></svg> Libros</button>
+      <button class="filter" data-f="con"><svg class="ic"><use href="#i-mic"/></svg> Congresos</button>
+      <div class="search"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar por título, revista o autor…"></div>
+    </div>
+    <div class="count" id="pubCount"></div>
+    <div class="pubs" id="pubList"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto" class="dark">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-send"/></svg></span><div><span class="num">08 — Hablemos</span><h2>Contacto</h2><p>Estaré encantado de colaborar en docencia, investigación o consultoría estadística</p></div></div>
+    <div class="cgrid">
+      <div class="citem reveal"><span class="tile"><svg class="ic"><use href="#i-mail"/></svg></span><h3>Correo</h3><a href="mailto:j.morales@umh.es">j.morales@umh.es</a></div>
+      <div class="citem reveal"><span class="tile"><svg class="ic teal"><use href="#i-phone"/></svg></span><h3>Teléfono despacho</h3><a href="tel:+34966658961">+34 966 658 961</a></div>
+      <div class="citem reveal"><span class="tile"><svg class="ic"><use href="#i-uni"/></svg></span><h3>Dirección</h3><p>Dpto. Estadística, Matemáticas e Informática<br>Instituto i-MInD<br>Universidad Miguel Hernández · Elche</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Javier Morales Socuéllamos · Universidad Miguel Hernández de Elche</footer>
+<button id="top" aria-label="Volver arriba" onclick="scrollTo({top:0})"><svg class="ic"><use href="#i-up"/></svg></button>
+
+<script>
+/* ---------- DATOS ---------- */
+const PROJECTS=[
+ // type: inv (investigación), doc (innovación/divulgación), tra (transferencia); ip: true si es IP
+ {t:"Inteligencia artificial para el pronóstico cardiológico (IAProCardio)",f:"Universidad Miguel Hernández de Elche",y:"2022",a:"3.100 €",ip:false,k:"inv"},
+ {t:"Convenio Generalitat–UMH para la financiación de la Cátedra de Transformación del Modelo Económico",f:"Generalitat Valenciana · Conselleria de Hacienda y Economía",y:"2025",a:"40.000 €",ip:false,k:"tra"},
+ {t:"Estudio de la siniestralidad vial en función de las condiciones psicofísicas y la reincidencia de las personas conductoras",f:"Ministerio del Interior",y:"2025",a:"10.900 €",ip:false,k:"tra"},
+ {t:"Desarrollo de nuevos recursos y bioproductos basados en residuos de especies palmáceas orientados al secuestro de carbono",f:"Ministerio de Economía y Competitividad (AGL2013-41612-R)",y:"2014–2017",a:"121.000 €",ip:false,k:"inv"},
+ {t:"Análisis, selección y validación bayesianos de modelos espaciales y temporales en epidemiología y medio ambiente",f:"Plan Nacional (MTM2004-03290)",y:"2004–2007",ip:false,k:"inv"},
+ {t:"Diseño, implementación, selección y crítica de modelos jerárquicos bayesianos en la investigación farmacéutica",f:"Plan Nacional (SAF2001-2931)",y:"2001–2004",ip:false,k:"inv"},
+ {t:"Desarrollo en entorno Windows de una herramienta integrada para análisis estadísticos bayesianos",f:"Generalitat Valenciana (GV07/028)",y:"2007–2008",a:"24.265 €",ip:false,k:"inv"},
+ {t:"Análisis y diseño de césped artificial para campos de golf",f:"Generalitat Valenciana (GVEMP06/019)",y:"2006",a:"50.629 €",ip:false,k:"inv"},
+ {t:"Espectroscopía en el infrarrojo cercano (NIR) para el estudio de suelos mediterráneos afectados por incendios",f:"Generalitat Valenciana (GV05/018)",y:"2005–2006",a:"21.066 €",ip:false,k:"inv"},
+ {t:"Inferencia bayesiana: desarrollos basados en teoría de la información e implementación de software",f:"Generalitat Valenciana (GV99-159-1-01)",y:"2000–2001",ip:true,k:"inv"},
+ {t:"Teoría asintótica y soluciones computacionales en el tratamiento discreto de datos de naturaleza continua",f:"Generalitat Valenciana (INV00-01-22)",y:"2000–2001",a:"3.185 €",ip:true,k:"inv"},
+ {t:"Ayuda a infraestructura de material científico (fondos FEDER)",f:"FEDER",y:"1999",a:"24.956 €",ip:true,k:"inv"},
+ {t:"MAR-CONECT: Metodologías activas a través de la red: aprendizaje conectado",f:"UMH (PIEU/2020/06)",y:"2021",ip:true,k:"doc"},
+ {t:"Ayuda UMH para la difusión de la ciencia, la tecnología y la innovación 2021",f:"UMH (VIDIF21/68)",y:"2021",a:"1.000 €",ip:true,k:"doc"},
+ {t:"Aulas Diversas, Activas y Sostenibles (ADAS)",f:"SS0015IP",y:"2020–2021",a:"3.000 €",ip:false,k:"doc"},
+ {t:"PIC: Propuesta Interdisciplinar Cooperativa para la formación del profesorado de Secundaria",f:"UMH (PIEU/2019/04)",y:"2020",ip:false,k:"doc"},
+ {t:"SALVEM ILLICE",f:"UMH (OSMOSIS2018/32)",y:"2019",ip:true,k:"doc"},
+ {t:"Gamificación",f:"UMH (OSMOSIS2017/33)",y:"2017–2018",ip:true,k:"doc"},
+ {t:"Aprendo haciendo: un proyecto de aprendizaje",f:"UMH (PIEU2017/18)",y:"2017–2018",ip:false,k:"doc"},
+ {t:"I Jornadas de Innovación Colaborativa UMH, JIC2017",f:"UMH (INDICO2017-DIVULGA/089)",y:"2017",ip:true,k:"doc"},
+ {t:"El diseño de experimentos como herramienta óptima en la investigación",f:"UMH (INNOVA+2016-DIVULGA/091)",y:"2016–2017",ip:true,k:"doc"},
+ {t:"Escuela de Verano UMH en Estadística y Optimización",f:"Generalitat Valenciana (AE07/028)",y:"2007",a:"2.500 €",ip:false,k:"doc"},
+ {t:"Organización de los Congresos de Estudiantes de Estadística (ediciones I a IV)",f:"Instituto Juan Gil-Albert, Generalitat Valenciana y Bancaja",y:"1998–2001",ip:true,k:"doc"},
+ {t:"Asistencia técnica estadística y de toma de decisiones en los Másteres en Avances en Cardiología y Diagnóstico por la Imagen en Cardiología",f:"Fundación Casa del Corazón",y:"2018–actualidad",ip:false,k:"tra"},
+ {t:"Asistencia técnica en el Máster en Prevención Secundaria en Cardiopatía Isquémica",f:"Fundación Casa del Corazón",y:"2019–2023",ip:false,k:"tra"},
+ {t:"Análisis estadístico de la persistencia de insecticidas y de la extensión de la plaga del picudo rojo",f:"Ayuntamiento de Elche",y:"2006–2007",a:"42.918 €",ip:true,k:"tra"},
+ {t:"Asesoramiento y asistencia técnica en Estadística e Investigación Operativa",f:"Mutualidad de Levante",y:"2006",a:"7.279 €",ip:false,k:"tra"}
+];
+
+const PUBS=[
+ {y:2024,k:"art",t:"An algorithm for automatic selection and combination of forecast models",a:"García-Aroca, C.; Martínez-Mayoral, M.A.; Morales, J.; Segura-Heras, J.V.",s:"Expert Systems with Applications, 237, 121636",d:"10.1016/j.eswa.2023.121636"},
+ {y:2024,k:"art",t:"Classification tree obtained by artificial intelligence for the prediction of heart failure after acute coronary syndromes",a:"Cordero, A.; Bertomeu-González, V.; Segura, J.V.; Morales, J.; Álvarez-Álvarez, B.; Escribano, D.; Rodríguez-Mañero, M.; Cid-Álvarez, B.; García-Acuña, J.M.; González-Juanatey, J.R.; Martínez-Mayoral, A.",s:"Medicina Clínica, 163(4), 167-174",d:"10.1016/j.medcli.2024.01.040"},
+ {y:2024,k:"art",t:"alPCA: An automatic software for the selection and combination of forecasts in monthly series",a:"García-Aroca, C.; Martínez-Mayoral, M.A.; Morales, J.; Segura-Heras, J.V.",s:"Software Impacts, 20, 100644",d:"10.1016/j.simpa.2024.100644"},
+ {y:2023,k:"art",t:"Usefulness of open data to determine the incidence of COVID-19 and its relationship with atmospheric variables in Spain during the 2020 lockdown",a:"Zubcoff, J.J.; Olcina, J.; Morales, J.; Mazón, J.N.; Mayoral, A.M.",s:"Technological Forecasting and Social Change, 186, 122108",d:"10.1016/j.techfore.2022.122108"},
+ {y:2021,k:"art",t:"La mejora de la competencia digital de los futuros docentes de secundaria: una experiencia en la Universidad Miguel Hernández",a:"Jiménez-Hernández, D.; González-Calatayud, V.; Mayoral, A.M.; Morales, J.",s:"Aloma, 39(2), 53-62"},
+ {y:2021,k:"art",t:"Toxoplasma gondii infection in hospitalized people living with HIV in Spain, 1997 to 2015",a:"Menchi-Elanzi, M.; Mayoral, A.M.; Morales, J.; Pinargote-Celorio, H.; González-Alcaide, G.; Ramos-Rincón, J.M.",s:"Parasitology Research, 120, 755-761",d:"10.1007/s00436-020-07007-5"},
+ {y:2020,k:"art",t:"Digital competence of future Secondary School teachers: differences according to gender, age, and branch of knowledge",a:"Jiménez-Hernández, D.; González-Calatayud, V.; Torres-Soto, A.; Mayoral, A.M.; Morales, J.",s:"Sustainability, 12, 9473",d:"10.3390/su12229473"},
+ {y:2020,k:"cap",t:"La competencia digital de los futuros docentes de secundaria y su mejora a partir de la formación específica en TIC",a:"Torres-Soto, A.; Jiménez-Hernández, D.; González-Calatayud, V.; Mayoral, A.M.; Morales, J.",s:"La docencia en la Enseñanza Superior. Octaedro, 445-453"},
+ {y:2019,k:"art",t:"Análisis de la prueba de evaluación clínica objetiva estructurada (ECOE) de sexto curso en la Facultad de Medicina de la UMH",a:"Ramos-Rincón, J.M.; Mayoral, A.M.; Sánchez-Ferrer, F.; Morales, J.; Sempere, T.; Belinchón, I.; Compañ, A.",s:"Educación Médica, 20, 29-36",d:"10.1016/j.edumed.2017.07.020"},
+ {y:2019,k:"art",t:"Multivariate Bioclimatic Indices Modelling: A Coregionalised Approach",a:"Barber, X.; Conesa, D.; López-Quílez, A.; Morales, J.",s:"Journal of Agricultural, Biological and Environmental Statistics, 24(2), 225-244",d:"10.1007/s13253-018-00345-z"},
+ {y:2018,k:"lib",t:"Monográfico Innovación UMH 2017",a:"Mayoral, A.M.; Morales, J.; Pérez-Juan, J.A.; Robles, P. (eds.)",s:"Editorial Electrónica UMH"},
+ {y:2018,k:"con",t:"Learning by doing. Innovation for training future teachers",a:"Mayoral, A.M.; Morales, J.",s:"EDULEARN18 Proceedings, 6657-6661"},
+ {y:2017,k:"art",t:"Bayesian hierarchical models for analysing the spatial distribution of bioclimatic indices",a:"Barber, X.; Conesa, D.; López-Quílez, A.; Mayoral, A.M.; Morales, J.; Barber, A.",s:"SORT – Statistics and Operations Research Transactions, 41(2), 277-296"},
+ {y:2017,k:"con",t:"Evaluation of digital teaching skills",a:"Mayoral, A.M.; Morales, J.; Calvo, R.; Molina, J.",s:"EDULEARN17 Proceedings, 9786-9792"},
+ {y:2016,k:"con",t:"Developing a collaborative management and teaching environment",a:"Mayoral, A.M.; Morales, J.; Lobera, N.",s:"INTED2016 Proceedings, 4553-4560"},
+ {y:2016,k:"con",t:"ICT training for future teachers",a:"Mayoral, A.M.; Morales, J.; Borrás, F.; Aparicio, J.",s:"INTED2016 Proceedings, 4547-4552"},
+ {y:2015,k:"art",t:"Characterization of Dissolved Organic Matter from Sewage Sludge using 3D-Fluorescence Spectroscopy and Chemometric Tools",a:"Martín-Mata, J.; Marhuenda-Egea, F.C.; Moral, R.; Torres-Climent, A.; Martínez-Sabater, M.C.; Paredes, C.; Barber, X.; Morales, J.",s:"Communications in Soil Science and Plant Analysis, 46, 188-196"},
+ {y:2014,k:"cap",t:"Uso de la colorimetría en la estimación de parámetros de interés en lodos de depuradora",a:"Gálvez-Sola, L.; Pérez-Murcia, M.D.; Moreno-Caselles, J.; Pérez-Espinosa, A.; Morales, J.; Paredes, C.; Moral, R.",s:"Avances en la investigación sobre compost. Andavira, 393-400"},
+ {y:2014,k:"cap",t:"Viabilidad de la estimación del potencial fertilizante de lodos de depuradora a partir de NIRS",a:"Gálvez-Sola, L.; Mosquera-Losada, R.; Rigueiro-Rodríguez, A.; Barber, X.; Morales, J.; et al.",s:"VII Congreso Ibérico de Agroingeniería y Ciencias Hortícolas, 1540-1545"},
+ {y:2014,k:"cap",t:"Uso de una aproximación interdisciplinar para estudios de zonificación de suelos vinícolas: D.O.P. Alicante",a:"Marín-Martínez, A.J.; Paredes, C.; García-González, E.; Agulló, E.; Gálvez-Sola, L.; Barber, X.; Morales, J.; et al.",s:"VII Congreso Ibérico de Agroingeniería y Ciencias Hortícolas, 1999-2004"},
+ {y:2013,k:"art",t:"Estimation of parameters in sewage sludge by near-infrared reflectance spectroscopy (NIRS) using several regression tools",a:"Gálvez-Sola, L.; Morales, J.; Mayoral, A.M.; Paredes, C.; Bustamante, M.A.; Marhuenda-Egea, F.C.; Barber, X.; Moral, R.",s:"Talanta, 110, 81-88"},
+ {y:2013,k:"art",t:"Study of the Organic Fraction in Biosolids",a:"Torrecillas, C.; Martínez-Sabater, E.; Gálvez-Sola, L.; Agulló, E.; Pérez-Espinosa, A.; Morales, J.; Mayoral, A.M.; Moral, R.",s:"Communications in Soil Science and Plant Analysis, 44, 492-501"},
+ {y:2010,k:"art",t:"Estimation of phosphorus content and dynamics during composting: Use of near infrared spectroscopy",a:"Gálvez-Sola, L.; Morales, J.; Mayoral, A.M.; Marhuenda-Egea, F.C.; Martínez-Sabater, E.; Pérez-Murcia, M.D.; Bustamante, M.A.; Paredes, C.; Moral, R.",s:"Chemosphere, 78, 13-21"},
+ {y:2009,k:"art",t:"Study of the composting process of winery and distillery wastes using multivariate techniques",a:"Bustamante, M.A.; Paredes, C.; Morales, J.; Mayoral, A.M.; Moral, R.",s:"Bioresource Technology, 100, 4766-4772"},
+ {y:2008,k:"art",t:"The presence of ash as an interference factor in the estimation of the maximum temperatures reached on burned soils using NIR",a:"Arcenegui, V.; Guerrero, C.; Mataix-Solera, J.; Mataix, J.; Zornoza, R.; Morales, J.; Mayoral, A.M.",s:"Catena, 74, 177-184"},
+ {y:2007,k:"art",t:"Bayesian design in queues: An application to aeronautic maintenance",a:"Morales, J.; Castellanos, M.E.; Mayoral, A.M.; Fried, R.; Armero, C.",s:"Journal of Statistical Planning and Inference, 137, 3058-3067"},
+ {y:2007,k:"art",t:"Extreme value analysis within a parametric outlier detection framework",a:"Cabras, S.; Morales, J.",s:"Applied Stochastic Models in Business and Industry, 23, 157-164"},
+ {y:2007,k:"art",t:"Factors controlling the water repellency induced by fire in calcareous Mediterranean forest soils",a:"Arcenegui, V.; Mataix-Solera, J.; Guerrero, C.; Zornoza, R.; Mayoral, A.M.; Morales, J.",s:"European Journal of Soil Science, 58, 1254-1259"},
+ {y:2007,k:"art",t:"Soil properties under natural forest in the Alicante Province of Spain",a:"Zornoza, R.; Mataix-Solera, J.; Guerrero, C.; Arcenegui, V.; Mayoral, A.M.; Morales, J.; Mataix, J.",s:"Geoderma, 142, 334-341"},
+ {y:2007,k:"art",t:"Water repellency under different plant species in a calcareous forest soil in a semiarid Mediterranean environment",a:"Mataix-Solera, J.; Arcenegui, V.; Guerrero, C.; Mayoral, A.M.; Morales, J.; González, J.; García-Orenes, F.; Gómez, I.",s:"Hydrological Processes, 21, 2300-2309"},
+ {y:2006,k:"art",t:"MCMC methods to approximate conditional predictive distributions",a:"Bayarri, M.J.; Castellanos, M.E.; Morales, J.",s:"Computational Statistics & Data Analysis, 51, 621-640"},
+ {y:2006,k:"cap",t:"On Bayesian design in finite source queues",a:"Morales, J.; Castellanos, M.E.; Mayoral, A.M.; Armero, C.; Fried, R.",s:"Proceedings of the 17th COMPSTAT Symposium of the IASC. Physica-Verlag, 1381-1388"},
+ {y:2006,k:"cap",t:"Bayesian modelling of finite-source queueing systems",a:"Castellanos, M.E.; Mayoral, A.M.; Morales, J.; Fried, R.; Armero, C.",s:"Proceedings of the 21st International Workshop on Statistical Modelling, 369-372"},
+ {y:2003,k:"art",t:"Bayesian measures of surprise for outlier detection",a:"Morales, J.",s:"Journal of Statistical Planning and Inference, 111, 3-22"},
+ {y:2003,k:"art",t:"On efficiency of estimation and testing with data quantized to fixed numbers of cells",a:"Mayoral, A.M.; Morales, D.; Morales, J.; Vajda, I.",s:"Metrika, 57, 1-27"},
+ {y:2001,k:"lib",t:"Modelos lineales generalizados",a:"Mayoral, A.M.; Morales, J.",s:"Universidad Miguel Hernández"},
+ {y:2001,k:"lib",t:"Estimación y proyección del consumo de gas natural canalizado en Cataluña",a:"Escudero, L.; Almiñana, M.; Martínez-Mayoral, A.; Molina, E.; Morales, D.; Morales, J.; Santamaría, L.",s:"Informe técnico"},
+ {y:2001,k:"lib",t:"Estudio diagnóstico de impacto de los trazados de la línea de alta velocidad Madrid–Castilla-La Mancha–C. Valenciana–Murcia",a:"Morales, J.",s:"Informe técnico"},
+ {y:2000,k:"art",t:"Some new statistics for testing null hypotheses with prior information",a:"Esteban, M.D.; Mayoral, A.M.; Morales, D.; Morales, J.",s:"Journal of Statistical Planning and Inference, 87(2), 251-271"}
+];
+const KIND={art:"Artículo",cap:"Capítulo",lib:"Libro",con:"Congreso"};
+
+const KCOLOR={art:"#1a2a50",cap:"#2a9d8f",lib:"#e2873a",con:"#e76f51"};
+const KICON={art:"doc",cap:"bookmark",lib:"book",con:"mic"};
+const PICON={inv:"flask",doc:"board",tra:"briefcase"};
+const I=(n,c='')=>`<svg class="ic ${c}"><use href="#i-${n}"/></svg>`;
+
+/* ---------- PROYECTOS ---------- */
+const projList=document.getElementById('projList');
+function renderProj(f){
+  projList.innerHTML=PROJECTS.filter(p=>f==='all'||p.k===f).map(p=>`
+   <article class="proj">
+     <span class="tile sm ${p.k==='inv'?'':'soft'}">${I(PICON[p.k],p.k==='inv'?'light':'teal')}</span>
+     <span class="badge ${p.ip?'ip':'mem'}">${p.ip?I('crown','teal')+' Investigador principal':I('team')+' Miembro del equipo'}</span>
+     <h3>${p.t}</h3>
+     <div class="meta"><span>${I('uni')}${p.f}</span><span>${I('cal')}${p.y}</span>${p.a?`<span>${I('coin')}${p.a}</span>`:''}</div>
+   </article>`).join('');
+}
+document.querySelectorAll('#projFilters .filter').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#projFilters .filter').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderProj(b.dataset.f)});
+renderProj('all');
+
+/* ---------- PUBLICACIONES ---------- */
+let pf='all';
+const pubList=document.getElementById('pubList'),q=document.getElementById('q');
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+function renderPubs(){
+  const term=norm(q.value);
+  const items=PUBS.filter(p=>(pf==='all'||p.k===pf)&&norm(p.t+p.a+p.s).includes(term));
+  document.getElementById('pubCount').textContent=`${items.length} resultado${items.length!==1?'s':''}`;
+  pubList.innerHTML=items.map(p=>`
+   <article class="pub" style="--k:${KCOLOR[p.k]}">
+     <div><div class="yr">${p.y}</div><div class="kind">${I(KICON[p.k])} ${KIND[p.k]}</div></div>
+     <div><h3>${p.t}</h3><div class="au">${p.a.replace(/Morales, J\./g,'<b>Morales, J.</b>')}</div>
+     <div class="src">${p.s}${p.d?`<a class="doi" href="https://doi.org/${p.d}" target="_blank" rel="noopener">DOI ${I('ext')}</a>`:''}</div></div>
+   </article>`).join('');
+}
+document.querySelectorAll('#pubFilters .filter').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#pubFilters .filter').forEach(x=>x.classList.remove('on'));b.classList.add('on');pf=b.dataset.f;renderPubs()});
+q.oninput=renderPubs;renderPubs();
+
+/* ---------- NAV, REVEAL, CONTADORES ---------- */
+const nav=document.getElementById('nav'),top_=document.getElementById('top');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);top_.classList.toggle('show',scrollY>600)});
+document.querySelectorAll('.links a').forEach(a=>a.onclick=()=>document.querySelector('.links').classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+  document.querySelectorAll('.links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>sio.observe(s));
+const fmt=v=>String(v).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.count;let i=0;
+  const step=()=>{i+=Math.max(1,Math.ceil(n/45));el.textContent=fmt(i>=n?n:i);if(i<n)requestAnimationFrame(step)};step();cio.unobserve(el)}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- FONDO ANIMADO (red de nodos ámbar/turquesa) ---------- */
+(function(){const c=document.getElementById('net'),x=c.getContext('2d');let w,h,pts=[];
+  function size(){w=c.width=c.offsetWidth;h=c.height=c.offsetHeight;pts=Array.from({length:Math.min(60,Math.floor(w/20))},(_,i)=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,c:i%3?'191,230,223':'244,162,89'}))}
+  function draw(){x.clearRect(0,0,w,h);
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
+      if(d<140){x.strokeStyle=`rgba(191,230,223,${.35*(1-d/140)})`;x.lineWidth=.7;x.beginPath();x.moveTo(pts[i].x,pts[i].y);x.lineTo(pts[j].x,pts[j].y);x.stroke()}}
+    for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;
+      x.fillStyle=`rgba(${p.c},.9)`;x.beginPath();x.arc(p.x,p.y,p.c[0]==='2'?2.4:1.6,0,7);x.fill()}
+    requestAnimationFrame(draw)}
+  addEventListener('resize',size);size();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)draw();})();
+</script>
+</body>
+</html>
