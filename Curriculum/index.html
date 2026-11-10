@@ -300,7 +300,7 @@ section.collapsible + section.collapsible{border-top:1px solid var(--line)}
 .ptl-year{display:grid;grid-template-columns:90px 1fr;gap:18px;position:relative}
 .ptl-year::before{content:"";position:absolute;left:44px;top:0;bottom:0;width:2px;background:linear-gradient(var(--amber),var(--teal))}
 .ptl-y{position:relative;z-index:1}
-.ptl-y span{position:sticky;top:20px;display:inline-block;font-family:Fraunces,serif;font-weight:700;font-size:1.05rem;color:#fff;background:var(--night-800);padding:6px 12px;border-radius:12px;margin-top:14px;box-shadow:0 0 0 5px var(--sand)}
+.ptl-y span{position:sticky;top:20px;display:inline-block;font-family:Fraunces,serif;font-weight:700;font-size:1.05rem;color:#fff;background:var(--night-800);padding:6px 12px;border-radius:12px;margin-top:14px;box-shadow:0 0 0 5px var(--secbg)}
 .ptl-items{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:14px 0}
 .ptl-items>:only-child{grid-column:1/-1;max-width:760px}
 @media (max-width:760px){.ptl-year{grid-template-columns:62px 1fr;gap:10px}.ptl-year::before{left:30px}.ptl-items{grid-template-columns:1fr}.ptl-y span{font-size:.9rem;padding:5px 8px}}
@@ -384,11 +384,37 @@ a.book:hover{text-decoration:none;border-color:var(--amber);transform:translateY
 .pub-stats .stat:nth-child(2){background:linear-gradient(150deg,var(--teal),var(--teal-d) 55%,#134e48)}
 .pyear{display:grid;grid-template-columns:90px 1fr;gap:18px;position:relative}
 .pyear::before{content:"";position:absolute;left:44px;top:0;bottom:0;width:2px;background:linear-gradient(var(--amber),var(--teal))}
-.pyear .ptl-y span{box-shadow:0 0 0 5px var(--ivory)}
+
 .pyear-items{display:grid;gap:10px;padding:14px 0}
 .pub{display:block!important}
 .pub .kind{margin:0 0 4px!important}
 @media (max-width:760px){.pyear{grid-template-columns:62px 1fr;gap:10px}.pyear::before{left:30px}.pub-stats{grid-template-columns:1fr 1fr}}
+/* Fondos de sección coherentes: bandas oscuras, subsecciones claras */
+section{--secbg:var(--ivory)}
+section.alt{--secbg:var(--sand)}
+.research-band{background:linear-gradient(90deg,var(--night-950),var(--night-700))}
+/* Impacto en versión clara */
+#impacto .mcard{background:#fff;border:1px solid var(--line);color:var(--ink);box-shadow:0 10px 24px -16px rgba(11,20,40,.4)}
+#impacto .mcard::before{background:radial-gradient(circle,rgba(244,162,89,.18),transparent 70%)}
+#impacto a.mcard:hover{border-color:var(--amber)}
+#impacto .mhead{color:var(--night-900)}
+#impacto .mbig{color:var(--amber-d)}
+#impacto .mbig span{color:var(--muted)}
+#impacto .mrow{border-top-color:var(--line)}
+#impacto .mrow div{color:var(--muted)}
+#impacto .mrow b{color:var(--night-900)}
+#impacto .mdate{color:var(--teal-d)}
+/* Contacto en versión clara */
+#contacto .citem{background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px -16px rgba(11,20,40,.4)}
+#contacto .citem h3{color:var(--amber-d)}
+#contacto .citem a,#contacto .citem p{color:var(--night-900)}
+#contacto .tile{box-shadow:4px 4px 0 -1px var(--amber),0 8px 16px -10px rgba(11,20,40,.5)}
+/* Proyectos: tipo en cada tarjeta */
+.p-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ptype{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid}
+.ptype.inv{color:var(--night-700);border-color:rgba(40,64,118,.35);background:rgba(40,64,118,.07)}
+.ptype.doc{color:var(--teal-d);border-color:rgba(42,157,143,.4);background:rgba(42,157,143,.08)}
+.ptype.tra{color:var(--amber-d);border-color:rgba(226,135,58,.45);background:rgba(244,162,89,.1)}
 /* Apartado abierto */
 .placeholder{display:flex;flex-direction:column;align-items:center;gap:10px;padding:40px 20px;border:2px dashed var(--line);border-radius:20px;background:rgba(255,255,255,.6);color:var(--muted);text-align:center}
 .placeholder .ic{width:34px;height:34px;color:var(--amber-d)}
@@ -625,7 +651,7 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
   <a class="side-link" href="#publicaciones"><span class="sl-ic"><svg class="ic"><use href="#i-book"/></svg></span>Publicaciones<em data-cnt="pubs"></em></a>
   <a class="side-link" href="#proyectos"><span class="sl-ic"><svg class="ic"><use href="#i-network"/></svg></span>Proyectos<em data-cnt="proj"></em></a>
   <a class="side-link" href="#tesis"><span class="sl-ic"><svg class="ic"><use href="#i-award"/></svg></span>Tesis doctorales<em>2</em></a>
-  <div class="side-group">Más</div>
+  <div class="side-group">Otros aspectos de mi CV</div>
   <a class="side-link" href="#otros"><span class="sl-ic"><svg class="ic"><use href="#i-star"/></svg></span>Otras actividades</a>
   <a class="side-link" href="#contacto"><span class="sl-ic"><svg class="ic"><use href="#i-send"/></svg></span>Contacto</a>
   <div class="side-actions">
@@ -766,7 +792,7 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
   </div>
 </section>
 
-<div class="research-band teach">
+<div class="research-band">
   <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-board"/></svg></span><div><span>Bloque de docencia</span><h2>Docencia</h2><p>Grado · Postgrado · Títulos propios · Trabajos fin de grado y máster · Publicaciones docentes</p></div></div>
 </div>
 
@@ -840,7 +866,7 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
   <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-flask"/></svg></span><div><span>Bloque de investigación</span><h2>Investigación</h2><p>Impacto · Publicaciones · Proyectos · Tesis doctorales</p></div></div>
 </div>
 <!-- ================= IMPACTO ================= -->
-<section id="impacto" class="dark">
+<section id="impacto">
   <div class="wrap">
     <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-trophy"/></svg></span><div><span class="num">Investigación · Bibliometría</span><h2>Indicadores de impacto</h2><p>Citas e índices bibliométricos según distintas fuentes</p><p class="sec-sum">1.097 citas · índice h 16 · índice i10 22</p></div></div>
     <div class="metric-cards">
@@ -874,7 +900,7 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 </section>
 
 <!-- ================= PUBLICACIONES ================= -->
-<section id="publicaciones">
+<section id="publicaciones" class="alt">
   <div class="wrap">
     <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-book"/></svg></span><div><span class="num">Investigación · Producción científica</span><h2>Publicaciones</h2><p>Artículos, capítulos, libros y congresos</p><p class="sec-sum"><span data-sum="pubs"></span></p></div></div>
     <div class="pub-stats reveal">
@@ -895,11 +921,12 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 </section>
 
 <!-- ================= PROYECTOS ================= -->
-<section id="proyectos" class="alt">
+<section id="proyectos">
   <div class="wrap">
     <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-network"/></svg></span><div><span class="num">Investigación · Proyectos</span><h2>Proyectos de investigación</h2><p>Investigación básica, innovación y divulgación, y transferencia</p><p class="sec-sum"><span data-sum="proj"></span></p></div></div>
     <div class="toolbar reveal" id="projFilters" role="tablist">
-            <button class="filter on" data-f="inv"><svg class="ic"><use href="#i-flask"/></svg> Investigación básica <em data-pc="inv"></em></button>
+      <button class="filter on" data-f="all"><svg class="ic"><use href="#i-network"/></svg> Todos <em data-pc="all"></em></button>
+      <button class="filter" data-f="inv"><svg class="ic"><use href="#i-flask"/></svg> Investigación básica <em data-pc="inv"></em></button>
       <button class="filter" data-f="doc"><svg class="ic"><use href="#i-board"/></svg> Innovación y divulgación <em data-pc="doc"></em></button>
       <button class="filter" data-f="tra"><svg class="ic"><use href="#i-briefcase"/></svg> Transferencia <em data-pc="tra"></em></button>
     </div>
@@ -908,7 +935,7 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 </section>
 
 <!-- ================= TESIS ================= -->
-<section id="tesis">
+<section id="tesis" class="alt">
   <div class="wrap">
     <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><span class="num">Investigación · Formación de investigadores</span><h2>Tesis doctorales dirigidas</h2><p>Doctores formados y producción científica derivada</p><p class="sec-sum">2 tesis doctorales · una con Sobresaliente Cum Laude</p></div></div>
     <div class="entries">
@@ -918,12 +945,16 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
   </div>
 </section>
 
+<!-- ================= BANDA OTROS ASPECTOS ================= -->
+<div class="research-band">
+  <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><span>Bloque final</span><h2>Otros aspectos de mi CV</h2><p>Otras actividades · Contacto</p></div></div>
+</div>
 <!-- ================= APARTADO ABIERTO (pendiente de completar) =================
      Cambia el título, el subtítulo y el contenido cuando decidas qué incluir.
      Si cambias el id "otros", cámbialo también en el menú lateral (enlace href="#otros"). -->
-<section id="otros" class="alt">
+<section id="otros">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><span class="num">Más</span><h2>Otras actividades</h2><p>Apartado en preparación</p><p class="sec-sum">Próximamente</p></div></div>
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><span class="num">Otros aspectos · Pendiente de completar</span><h2>Otras actividades</h2><p>Apartado en preparación</p><p class="sec-sum">Próximamente</p></div></div>
     <div class="placeholder reveal">
       <svg class="ic"><use href="#i-star"/></svg>
       <p>Este apartado se completará próximamente.</p>
@@ -932,9 +963,9 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 </section>
 
 <!-- ================= CONTACTO ================= -->
-<section id="contacto" class="dark">
+<section id="contacto" class="alt">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-send"/></svg></span><div><span class="num">Hablemos</span><h2>Contacto</h2><p>Estaré encantado de colaborar en docencia, investigación o consultoría estadística</p></div></div>
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-send"/></svg></span><div><span class="num">Otros aspectos · Hablemos</span><h2>Contacto</h2><p>Estaré encantado de colaborar en docencia, investigación o consultoría estadística</p></div></div>
     <div class="cgrid">
       <div class="citem reveal"><span class="tile"><svg class="ic"><use href="#i-mail"/></svg></span><h3>Correo</h3><a href="mailto:j.morales@umh.es">j.morales@umh.es</a></div>
       <div class="citem reveal"><span class="tile"><svg class="ic teal"><use href="#i-phone"/></svg></span><h3>Teléfono despacho</h3><a href="tel:+34966658961">+34 966 658 961</a></div>
@@ -1048,15 +1079,16 @@ const I=(n,c='')=>`<svg class="ic ${c}"><use href="#i-${n}"/></svg>`;
 /* ---------- PROYECTOS ---------- */
 const projList=document.getElementById('projList');
 const startY=p=>parseInt(p.y,10);
-document.querySelectorAll('[data-pc]').forEach(e=>e.textContent=PROJECTS.filter(p=>p.k===e.dataset.pc).length);
+document.querySelectorAll('[data-pc]').forEach(e=>e.textContent=e.dataset.pc==='all'?PROJECTS.length:PROJECTS.filter(p=>p.k===e.dataset.pc).length);
+const PTYPE={inv:'Investigación básica',doc:'Innovación y divulgación',tra:'Transferencia'};
 function renderProj(f){
-  const items=PROJECTS.filter(p=>p.k===f).sort((a,b)=>startY(b)-startY(a));
+  const items=PROJECTS.filter(p=>f==='all'||p.k===f).sort((a,b)=>startY(b)-startY(a));
   let html='',last=null;
   items.forEach(p=>{const y=startY(p);
     if(y!==last){if(last!==null)html+='</div></div>';html+=`<div class="ptl-year"><div class="ptl-y"><span>${y}</span></div><div class="ptl-items">`;last=y}
     html+=`<article class="proj">
-     <span class="tile sm ${f==='inv'?'':'soft'}">${I(PICON[p.k],f==='inv'?'light':'teal')}</span>
-     <span class="badge ${p.ip?'ip':'mem'}">${p.ip?I('crown','teal')+' Investigador principal':I('team')+' Miembro del equipo'}</span>
+     <span class="tile sm ${p.k==='inv'?'':'soft'}">${I(PICON[p.k],p.k==='inv'?'light':'teal')}</span>
+     <div class="p-tags"><span class="ptype ${p.k}">${PTYPE[p.k]}</span><span class="badge ${p.ip?'ip':'mem'}">${p.ip?I('crown','teal')+' Investigador principal':I('team')+' Miembro del equipo'}</span></div>
      <h3>${p.t}</h3>
      <div class="meta"><span>${I('uni')}${p.f}</span><span>${I('cal')}${p.y}</span>${p.a?`<span>${I('coin')}${p.a}</span>`:''}</div>
     </article>`});
@@ -1065,7 +1097,7 @@ function renderProj(f){
 }
 document.querySelectorAll('#projFilters .filter').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#projFilters .filter').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderProj(b.dataset.f)});
-renderProj('inv');
+renderProj('all');
 
 /* ---------- LÍNEAS DE TIEMPO DE DOCENCIA (tipo Gantt) ---------- */
 const TL={
