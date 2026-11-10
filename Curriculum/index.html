@@ -64,7 +64,7 @@ nav.scrolled{background:rgba(7,13,28,.88);backdrop-filter:blur(12px);box-shadow:
 .burger{display:none;background:none;border:0;color:#fff;cursor:pointer;font-size:1.5rem}
 
 /* ---------- HERO ---------- */
-header.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;color:#e9edf7;
+header.hero{position:relative;min-height:72vh;display:flex;align-items:center;overflow:hidden;color:#e9edf7;
   background:
     radial-gradient(700px 500px at 82% 30%,rgba(244,162,89,.22),transparent 60%),
     radial-gradient(700px 520px at 5% 95%,rgba(42,157,143,.28),transparent 60%),
@@ -72,16 +72,17 @@ header.hero{position:relative;min-height:100vh;display:flex;align-items:center;o
 .hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at 60% 40%,#000 20%,transparent 75%)}
 .hero canvas{position:absolute;inset:0;opacity:.5}
 .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,860px);gap:48px;align-items:center;padding-top:96px;padding-bottom:70px}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:18px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:18px}
 .kicker::before{content:"";width:28px;height:2px;background:var(--amber);border-radius:2px}
-.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);color:#fff;margin-bottom:16px}
+.hero h1{font-size:clamp(1.6rem,3.3vw,2.7rem);color:#fff;margin-bottom:12px;white-space:nowrap}
 .hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--amber-l),var(--amber),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
-.role{font-size:1.15rem;color:#c3cbe0;max-width:760px;margin-bottom:26px}
+.role{font-size:.98rem;color:#c3cbe0;max-width:720px;margin-bottom:20px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
-.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.84rem;color:#e3e8f4}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#e3e8f4;transition:.2s}
+a.chip:hover{text-decoration:none;border-color:var(--amber);background:rgba(244,162,89,.12)}
 .chip .ic{color:#fff}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:14px;font-weight:600;font-size:.92rem;transition:.25s}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:12px;font-weight:600;font-size:.86rem;transition:.25s}
 .btn:hover{text-decoration:none;transform:translateY(-2px)}
 .btn.primary{background:linear-gradient(135deg,var(--amber-l),var(--amber));color:var(--night-950);box-shadow:0 12px 28px -10px rgba(244,162,89,.7)}
 .btn.ghost{border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.04)}
@@ -127,7 +128,7 @@ section.dark{background:linear-gradient(160deg,var(--night-900),var(--night-800)
 .sub .ic{color:var(--night-700)}
 
 /* Perfil */
-.about{display:grid;grid-template-columns:1.25fr 1fr;gap:36px;align-items:start}
+.about{display:grid;grid-template-columns:1fr;gap:20px;max-width:900px}
 .about p{margin-bottom:14px;color:#2b3346}
 .about strong{color:var(--night-800)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -303,6 +304,94 @@ section.collapsible + section.collapsible{border-top:1px solid var(--line)}
 .ptl-items{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:14px 0}
 .ptl-items>:only-child{grid-column:1/-1;max-width:760px}
 @media (max-width:760px){.ptl-year{grid-template-columns:62px 1fr;gap:10px}.ptl-year::before{left:30px}.ptl-items{grid-template-columns:1fr}.ptl-y span{font-size:.9rem;padding:5px 8px}}
+
+/* ---------- v10 ---------- */
+@media (max-width:640px){.hero h1{white-space:normal}}
+.research-band.teach{background:linear-gradient(90deg,#123b37,var(--teal-d))}
+.research-band.teach span:not(.tile){color:var(--amber-l)}
+.research-band.teach p{color:#cfeee9}
+/* Trayectoria unificada */
+.u-legend{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.u-legend span{display:inline-flex;align-items:center;gap:8px}
+.u-legend .prof{color:var(--night-700)}.u-legend .acad{color:var(--teal-d)}
+.utl{position:relative;padding:10px 0}
+.utl::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;margin-left:-1.5px;border-radius:3px;background:linear-gradient(var(--amber),var(--teal) 60%,var(--night-600))}
+.u-item{position:relative;width:50%;padding:10px 46px 10px 0}
+.u-item.right{margin-left:50%;padding:10px 0 10px 46px}
+.u-item .card{padding:16px 20px;box-shadow:0 8px 20px -14px rgba(11,20,40,.35)}
+.u-item.left .card{border-right:4px solid var(--night-600)}
+.u-item.right .card{border-left:4px solid var(--teal)}
+.u-item.now .card{border-right-color:var(--amber)}
+.u-item h3{font-family:Inter,sans-serif;font-size:1rem;font-weight:700;color:var(--night-900);margin-top:4px}
+.u-item p{font-size:.86rem;color:var(--muted)}
+.u-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.u-top .when{margin-bottom:0}
+.u-kind{display:none;align-items:center;gap:5px;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.u-kind.prof{color:var(--night-600)}.u-kind.acad{color:var(--teal-d)}
+.logo{position:absolute;top:18px;width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;z-index:2;overflow:hidden;
+  box-shadow:0 0 0 4px var(--sand),0 8px 18px -8px rgba(11,20,40,.5);border:2px solid var(--line)}
+.u-item.left .logo{right:-26px}.u-item.right .logo{left:-26px}
+.logo b{font-family:Fraunces,serif;font-size:.86rem;font-weight:700;letter-spacing:.02em}
+.logo.umh b{color:var(--night-700)}.logo.uv b{color:var(--teal-d)}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6px;background:#fff}
+.u-item.now .logo{box-shadow:0 0 0 4px var(--sand),0 0 0 8px rgba(244,162,89,.45)}
+@media (max-width:760px){
+  .u-legend{display:none}
+  .utl::before{left:26px}
+  .u-item,.u-item.right{width:auto;margin-left:0;padding:8px 0 8px 66px}
+  .u-item.left .logo,.u-item.right .logo{left:0;right:auto;width:52px;height:52px}
+  .u-item.left .card{border-right:0;border-left:4px solid var(--night-600)}
+  .u-item.now .card{border-left-color:var(--amber)}
+  .u-kind{display:inline-flex}
+}
+/* Gantt v10: años en columna y rejilla anual */
+.g-axis,.g-row{grid-template-columns:minmax(220px,32%) 1fr 92px!important}
+.g-yrs-h{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right}
+.g-yrs{display:block!important;margin:0!important;text-align:right;font-size:.78rem;font-weight:700;color:var(--c);font-variant-numeric:tabular-nums;line-height:1.3}
+.g-track i{background:rgba(26,42,80,.07)}
+.g-track i.major{background:rgba(26,42,80,.28);width:1.5px}
+.g-bar{top:7px;height:16px}
+.g-bar.one{width:14px!important;height:14px;top:8px;margin-left:0;border-width:2px}
+@media (max-width:700px){
+  .g-axis,.g-row{grid-template-columns:1fr auto!important}
+  .g-row .g-track{grid-column:1/-1;grid-row:2}
+  .g-axis .g-yrs-h{display:none}
+  .g-axis{grid-template-columns:1fr!important}
+  .g-ticks span:nth-child(even){display:inline!important}
+}
+/* Entradas compactas (TFG/TFM y tesis) */
+.entries{display:grid;gap:12px}
+.entry{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px;transition:.2s}
+.entry:hover{border-color:var(--amber-l);box-shadow:0 10px 24px -16px rgba(11,20,40,.4)}
+.e-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.e-top .when{margin-bottom:0}
+.e-badge{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--night-800);color:#fff}
+.entry h3{font-family:Inter,sans-serif;font-size:.98rem;font-weight:700;color:var(--night-900);margin:6px 0 2px;line-height:1.35}
+.entry p{font-size:.85rem;color:var(--muted)}
+.entry p b{color:var(--night-800)}
+.e-links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:.8rem}
+.e-links span{font-weight:700;color:var(--teal-d)}
+.e-links a{display:inline-flex;align-items:center;gap:5px;color:var(--night-700)}
+/* Publicaciones docentes enlazadas */
+a.book{color:inherit;transition:.2s}
+a.book:hover{text-decoration:none;border-color:var(--amber);transform:translateY(-2px);box-shadow:0 10px 22px -16px rgba(11,20,40,.45)}
+.book .isbn{display:block;font-size:.72rem!important;font-weight:600;color:var(--teal-d)!important;margin-top:2px}
+.book .go{margin-left:auto;color:var(--amber-d);flex-shrink:0}
+/* Publicaciones: estadísticas y agrupación por año */
+.pub-stats{display:grid;grid-template-columns:repeat(2,minmax(0,260px));gap:14px;margin-bottom:24px}
+.pub-stats .stat{display:block;color:#fff}
+.pub-stats .stat:hover{text-decoration:none;transform:translateY(-3px)}
+.pub-stats .stat:nth-child(2){background:linear-gradient(150deg,var(--teal),var(--teal-d) 55%,#134e48)}
+.pyear{display:grid;grid-template-columns:90px 1fr;gap:18px;position:relative}
+.pyear::before{content:"";position:absolute;left:44px;top:0;bottom:0;width:2px;background:linear-gradient(var(--amber),var(--teal))}
+.pyear .ptl-y span{box-shadow:0 0 0 5px var(--ivory)}
+.pyear-items{display:grid;gap:10px;padding:14px 0}
+.pub{display:block!important}
+.pub .kind{margin:0 0 4px!important}
+@media (max-width:760px){.pyear{grid-template-columns:62px 1fr;gap:10px}.pyear::before{left:30px}.pub-stats{grid-template-columns:1fr 1fr}}
+/* Apartado abierto */
+.placeholder{display:flex;flex-direction:column;align-items:center;gap:10px;padding:40px 20px;border:2px dashed var(--line);border-radius:20px;background:rgba(255,255,255,.6);color:var(--muted);text-align:center}
+.placeholder .ic{width:34px;height:34px;color:var(--amber-d)}
 
 /* Líneas con ilustración */
 .lines{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
@@ -522,16 +611,22 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 <!-- ================= MENÚ LATERAL ================= -->
 <aside id="side" aria-label="Navegación">
   <a class="side-brand" href="#inicio"><span class="mono">JM</span><div><b>Javier Morales</b><span>Profesor Titular · UMH</span></div></a>
-  <div class="side-group">Trayectoria</div>
+  <div class="side-group">Sobre mí</div>
   <a class="side-link" href="#perfil"><span class="sl-ic"><svg class="ic"><use href="#i-user"/></svg></span>Perfil</a>
-  <a class="side-link" href="#trayectoria"><span class="sl-ic"><svg class="ic"><use href="#i-route"/></svg></span>Experiencia y formación</a>
-  <a class="side-link" href="#docencia"><span class="sl-ic"><svg class="ic"><use href="#i-board"/></svg></span>Docencia</a>
+  <a class="side-link" href="#trayectoria"><span class="sl-ic"><svg class="ic"><use href="#i-route"/></svg></span>Trayectoria</a>
+  <div class="side-group">Docencia</div>
+  <a class="side-link" href="#grado"><span class="sl-ic"><svg class="ic"><use href="#i-cap"/></svg></span>Grado</a>
+  <a class="side-link" href="#postgrado"><span class="sl-ic"><svg class="ic"><use href="#i-award"/></svg></span>Postgrado</a>
+  <a class="side-link" href="#propios"><span class="sl-ic"><svg class="ic"><use href="#i-star"/></svg></span>Títulos propios</a>
+  <a class="side-link" href="#tfg"><span class="sl-ic"><svg class="ic"><use href="#i-doc"/></svg></span>TFG y TFM<em>3</em></a>
+  <a class="side-link" href="#pubdoc"><span class="sl-ic"><svg class="ic"><use href="#i-book"/></svg></span>Publicaciones docentes<em>6</em></a>
   <div class="side-group">Investigación</div>
-  <a class="side-link" href="#proyectos"><span class="sl-ic"><svg class="ic"><use href="#i-network"/></svg></span>Proyectos<em data-cnt="proj"></em></a>
-  <a class="side-link" href="#tesis"><span class="sl-ic"><svg class="ic"><use href="#i-award"/></svg></span>Tesis doctorales<em>2</em></a>
   <a class="side-link" href="#impacto"><span class="sl-ic"><svg class="ic"><use href="#i-trophy"/></svg></span>Impacto</a>
   <a class="side-link" href="#publicaciones"><span class="sl-ic"><svg class="ic"><use href="#i-book"/></svg></span>Publicaciones<em data-cnt="pubs"></em></a>
+  <a class="side-link" href="#proyectos"><span class="sl-ic"><svg class="ic"><use href="#i-network"/></svg></span>Proyectos<em data-cnt="proj"></em></a>
+  <a class="side-link" href="#tesis"><span class="sl-ic"><svg class="ic"><use href="#i-award"/></svg></span>Tesis doctorales<em>2</em></a>
   <div class="side-group">Más</div>
+  <a class="side-link" href="#otros"><span class="sl-ic"><svg class="ic"><use href="#i-star"/></svg></span>Otras actividades</a>
   <a class="side-link" href="#contacto"><span class="sl-ic"><svg class="ic"><use href="#i-send"/></svg></span>Contacto</a>
   <div class="side-actions">
     <button type="button" id="expAll"><svg class="ic"><use href="#i-down"/></svg> Expandir todo</button>
@@ -550,16 +645,6 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
   <div class="wrap">
     <a class="brand" href="#inicio"><span class="mono">JM</span> Javier Morales</a>
     <button class="burger" aria-label="Menú" onclick="document.body.classList.toggle('side-open')"><svg class="ic"><use href="#i-menu"/></svg></button>
-    <ul class="links">
-      <li><a href="#perfil">Perfil</a></li>
-      <li><a href="#trayectoria">Trayectoria</a></li>
-      <li><a href="#docencia">Docencia</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#tesis">Tesis</a></li>
-      <li><a href="#impacto">Impacto</a></li>
-      <li><a href="#publicaciones">Publicaciones</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
   </div>
 </nav>
 
@@ -573,8 +658,8 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
       <h1>Javier Morales <em>Socuéllamos</em></h1>
       <p class="role">Profesor Titular de Universidad en el Departamento de Estadística, Matemáticas e Informática de la Universidad Miguel Hernández de Elche. Miembro del Instituto Universitario de Investigación en Matemáticas, Ciencia de Datos e Inteligencia Artificial (i-MInD).</p>
       <div class="chips">
-        <span class="chip"><svg class="ic"><use href="#i-uni"/></svg> Universidad Miguel Hernández</span>
-        <span class="chip"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del i-MInD</span>
+        <a class="chip" href="https://www.umh.es/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-uni"/></svg> Universidad Miguel Hernández</a>
+        <a class="chip" href="https://cio.umh.es" target="_blank" rel="noopener"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del i-MInD</a>
         <span class="chip"><svg class="ic teal"><use href="#i-pin"/></svg> Elche, España</span>
         <span class="chip"><svg class="ic"><use href="#i-cal"/></svg> +30 años de trayectoria</span>
       </div>
@@ -591,17 +676,11 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 <!-- ================= PERFIL ================= -->
 <section id="perfil">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-user"/></svg></span><div><span class="num">01 — Sobre mí</span><h2>Perfil</h2><p>Quién soy y en qué trabajo</p><p class="sec-sum">Profesor Titular · Investigador del i-MInD · 6 líneas de investigación</p></div></div>
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-user"/></svg></span><div><span class="num">Sobre mí</span><h2>Perfil</h2><p>Quién soy y en qué trabajo</p><p class="sec-sum">Profesor Titular · Investigador del i-MInD · 6 líneas de investigación</p></div></div>
     <div class="about">
       <div class="reveal">
         <p>Licenciado (1994) y Doctor en Ciencias Matemáticas (2002) por la Universitat de València, con una tesis dirigida por la Prof. M.ª Jesús Bayarri. Desde 1997 desarrollo mi carrera en la <strong>Universidad Miguel Hernández de Elche</strong>, donde soy Profesor Titular desde 2012 y miembro del <strong>Instituto Universitario de Investigación en Matemáticas, Ciencia de Datos e Inteligencia Artificial (i-MInD)</strong>.</p>
         <p>Mi investigación se centra en la <strong>estadística bayesiana</strong> (detección de outliers, diseño en teoría de colas, métodos MCMC), la <strong>modelización espacial</strong> y la aplicación de técnicas multivariantes y quimiométricas a problemas medioambientales y agronómicos. En los últimos años he orientado mi trabajo hacia la <strong>inteligencia artificial y la predicción</strong>: selección y combinación automática de modelos de pronóstico y modelos de aprendizaje automático para el pronóstico cardiológico. En paralelo, impulso proyectos de <strong>innovación educativa</strong>, gamificación y competencia digital docente.</p>
-        <p>Actualmente imparto docencia en el Grado en Ciencia de Datos e Inteligencia Artificial, el Grado en Biotecnología y varios másteres oficiales.</p>
-        <a class="inst" href="https://cio.umh.es/" target="_blank" rel="noopener">
-          <span class="tile"><svg class="ic light"><use href="#i-network"/></svg></span>
-          <div><span class="inst-k">Instituto de investigación</span><b>i-MInD</b><span>Instituto Universitario de Investigación en Matemáticas, Ciencia de Datos e Inteligencia Artificial · UMH</span></div>
-          <svg class="ic go"><use href="#i-ext"/></svg>
-        </a>
         <div class="ids">
           <a href="https://orcid.org/0000-0002-7814-5176" target="_blank" rel="noopener"><svg class="ic"><use href="#i-orcid"/></svg> ORCID</a>
           <a href="https://scholar.google.es/citations?user=OkUmSC0AAAAJ" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg> Google Scholar</a>
@@ -611,12 +690,6 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
           <a href="https://portalinvestigacion.umh.es/investigadores/2182589" target="_blank" rel="noopener"><svg class="ic"><use href="#i-uni"/></svg> Portal UMH</a>
           <a href="https://cio.umh.es/" target="_blank" rel="noopener"><svg class="ic teal"><use href="#i-network"/></svg> i-MInD</a>
         </div>
-      </div>
-      <div class="stats reveal">
-        <div class="stat"><div class="n" data-count="1097">0</div><div class="l">Citas en Google Scholar</div><svg class="ic bgic"><use href="#i-quote"/></svg></div>
-        <div class="stat"><div class="n" data-count="16">0</div><div class="l">Índice h (Google Scholar)</div><svg class="ic bgic"><use href="#i-trend"/></svg></div>
-        <div class="stat"><div class="n" data-count="25">0</div><div class="l">Artículos en revistas científicas</div><svg class="ic bgic"><use href="#i-doc"/></svg></div>
-        <div class="stat"><div class="n" data-count="45">0</div><div class="l">Proyectos y contratos de I+D+i</div><svg class="ic bgic"><use href="#i-network"/></svg></div>
       </div>
     </div>
 
@@ -677,39 +750,30 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
 <!-- ================= TRAYECTORIA ================= -->
 <section id="trayectoria" class="alt">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-route"/></svg></span><div><span class="num">02 — Recorrido</span><h2>Trayectoria</h2><p>Experiencia profesional y formación académica</p><p class="sec-sum">Desde 1995 · 7 etapas profesionales · Doctor en Matemáticas (2002)</p></div></div>
-    <div class="two">
-      <div>
-        <h3 class="sub reveal"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</h3>
-        <div class="tl">
-          <div class="tl-item now reveal"><div class="card"><span class="when">2012 – actualidad</span><h3>Profesor Titular de Universidad</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto i-MInD</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">2002 – 2012</span><h3>Profesor Contratado Doctor</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">2001 – 2002</span><h3>Profesor Asociado</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">1999 – 2001</span><h3>Ayudante de Universidad</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">1997 – 1999</span><h3>Ayudante de Escuela Universitaria</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">1995 – 1997</span><h3>Becario FPI</h3><p>Universitat de València · Dpto. Estadística e Investigación Operativa</p></div></div>
-        </div>
-      </div>
-      <div>
-        <h3 class="sub reveal"><svg class="ic"><use href="#i-cap"/></svg> Formación académica</h3>
-        <div class="tl">
-          <div class="tl-item reveal"><div class="card"><span class="when">2002</span><h3>Doctor en Ciencias Matemáticas</h3><p>Facultad de Matemáticas, Universitat de València · Directora: M.ª Jesús Bayarri García</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">1995 – 1997</span><h3>Posgrado en Estadística e Investigación Operativa</h3><p>Facultad de Matemáticas, Universitat de València</p></div></div>
-          <div class="tl-item reveal"><div class="card"><span class="when">1994</span><h3>Licenciado en Matemáticas</h3><p>Facultad de Matemáticas, Universitat de València</p></div></div>
-        </div>
-      </div>
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-route"/></svg></span><div><span class="num">Sobre mí · Recorrido</span><h2>Trayectoria</h2><p>Experiencia profesional y formación académica en una única línea de tiempo</p><p class="sec-sum">Desde 1994 · Universitat de València y Universidad Miguel Hernández · Doctor en Matemáticas (2002)</p></div></div>
+    <div class="u-legend reveal"><span class="prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span><span class="acad"><svg class="ic"><use href="#i-cap"/></svg> Formación académica</span></div>
+    <div class="utl">
+      <div class="u-item left now reveal"><span class="logo umh" title="Universidad Miguel Hernández de Elche"><b>UMH</b><img src="img/logo-umh.png" alt="Universidad Miguel Hernández de Elche" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">2012 – actualidad</span><span class="u-kind prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span></div><h3>Profesor Titular de Universidad</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto i-MInD</p></div></div>
+      <div class="u-item left reveal"><span class="logo umh" title="Universidad Miguel Hernández de Elche"><b>UMH</b><img src="img/logo-umh.png" alt="Universidad Miguel Hernández de Elche" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">2002 – 2012</span><span class="u-kind prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span></div><h3>Profesor Contratado Doctor</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+      <div class="u-item right reveal"><span class="logo uv" title="Universitat de València"><b>UV</b><img src="img/logo-uv.png" alt="Universitat de València" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">2002</span><span class="u-kind acad"><svg class="ic"><use href="#i-cap"/></svg> Formación académica</span></div><h3>Doctor en Ciencias Matemáticas</h3><p>Facultad de Matemáticas, Universitat de València · Directora: M.ª Jesús Bayarri García</p></div></div>
+      <div class="u-item left reveal"><span class="logo umh" title="Universidad Miguel Hernández de Elche"><b>UMH</b><img src="img/logo-umh.png" alt="Universidad Miguel Hernández de Elche" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">2001 – 2002</span><span class="u-kind prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span></div><h3>Profesor Asociado</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+      <div class="u-item left reveal"><span class="logo umh" title="Universidad Miguel Hernández de Elche"><b>UMH</b><img src="img/logo-umh.png" alt="Universidad Miguel Hernández de Elche" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">1999 – 2001</span><span class="u-kind prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span></div><h3>Ayudante de Universidad</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+      <div class="u-item left reveal"><span class="logo umh" title="Universidad Miguel Hernández de Elche"><b>UMH</b><img src="img/logo-umh.png" alt="Universidad Miguel Hernández de Elche" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">1997 – 1999</span><span class="u-kind prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span></div><h3>Ayudante de Escuela Universitaria</h3><p>Universidad Miguel Hernández · Dpto. Estadística, Matemáticas e Informática</p><p class="aff"><svg class="ic teal"><use href="#i-network"/></svg> Investigador del Instituto CIO</p></div></div>
+      <div class="u-item left reveal"><span class="logo uv" title="Universitat de València"><b>UV</b><img src="img/logo-uv.png" alt="Universitat de València" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">1995 – 1997</span><span class="u-kind prof"><svg class="ic"><use href="#i-briefcase"/></svg> Experiencia profesional</span></div><h3>Becario FPI</h3><p>Universitat de València · Dpto. Estadística e Investigación Operativa</p></div></div>
+      <div class="u-item right reveal"><span class="logo uv" title="Universitat de València"><b>UV</b><img src="img/logo-uv.png" alt="Universitat de València" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">1995 – 1997</span><span class="u-kind acad"><svg class="ic"><use href="#i-cap"/></svg> Formación académica</span></div><h3>Posgrado en Estadística e Investigación Operativa</h3><p>Facultad de Matemáticas, Universitat de València</p></div></div>
+      <div class="u-item right reveal"><span class="logo uv" title="Universitat de València"><b>UV</b><img src="img/logo-uv.png" alt="Universitat de València" onerror="this.remove()"></span><div class="card"><div class="u-top"><span class="when">1994</span><span class="u-kind acad"><svg class="ic"><use href="#i-cap"/></svg> Formación académica</span></div><h3>Licenciado en Matemáticas</h3><p>Facultad de Matemáticas, Universitat de València</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ================= DOCENCIA ================= -->
-<section id="docencia">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-board"/></svg></span><div><span class="num">03 — Aula</span><h2>Docencia</h2><p>Organizada en Grado, Postgrado y Títulos propios</p><p class="sec-sum">Grado · Postgrado · Títulos propios</p></div></div>
+<div class="research-band teach">
+  <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-board"/></svg></span><div><span>Bloque de docencia</span><h2>Docencia</h2><p>Grado · Postgrado · Títulos propios · Trabajos fin de grado y máster · Publicaciones docentes</p></div></div>
+</div>
 
-    <!-- ===== BLOQUE 1: GRADO ===== -->
-    <div class="tblock reveal">
-      <div class="tblock-head"><span class="tile"><svg class="ic light"><use href="#i-cap"/></svg></span><div><h3>Grado</h3><p>Grados, licenciaturas y diplomaturas</p></div><span class="cnt">+30 asignaturas desde 1997</span></div>
+<!-- ================= DOCENCIA · GRADO ================= -->
+<section id="grado">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-cap"/></svg></span><div><span class="num">Docencia · Grado</span><h2>Grado</h2><p>Grados, licenciaturas y diplomaturas</p><p class="sec-sum">3 asignaturas actuales · +30 asignaturas impartidas desde 1997</p></div></div>
       <div class="minisub">Docencia actual</div>
       <div class="courses">
         <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-robot"/></svg></span><div class="lvl">Grado en Ciencia de Datos e IA</div><h3>Machine Learning 1: Clasificación y Reducción de la Dimensión</h3><p>Teoría, problemas y prácticas de laboratorio</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2026 – actualidad</div></div>
@@ -718,11 +782,13 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
       </div>
       <div class="minisub">Docencia anterior · línea de tiempo</div>
       <div class="gantt reveal" data-tl="grado"></div>
-    </div>
+  </div>
+</section>
 
-    <!-- ===== BLOQUE 2: POSTGRADO ===== -->
-    <div class="tblock reveal">
-      <div class="tblock-head"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><h3>Postgrado</h3><p>Másteres oficiales y programas de doctorado</p></div><span class="cnt">Máster y doctorado</span></div>
+<!-- ================= DOCENCIA · POSTGRADO ================= -->
+<section id="postgrado" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><span class="num">Docencia · Postgrado</span><h2>Postgrado</h2><p>Másteres oficiales y programas de doctorado</p><p class="sec-sum">3 asignaturas actuales en másteres oficiales · docencia en doctorado</p></div></div>
       <div class="minisub">Másteres oficiales · docencia actual</div>
       <div class="courses">
         <div class="course reveal "><span class="tile sm"><svg class="ic light"><use href="#i-scale"/></svg></span><div class="lvl">Máster en Contabilidad y Finanzas Avanzadas</div><h3>Métodos Cuantitativos para la Toma de Decisiones</h3><p>Máster oficial</p><div class="yrs"><svg class="ic"><use href="#i-clock"/></svg> 2020 – actualidad</div></div>
@@ -731,85 +797,52 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
       </div>
       <div class="minisub">Docencia anterior en másteres y doctorado · línea de tiempo</div>
       <div class="gantt reveal" data-tl="postgrado"></div>
-      <a class="thesis-link reveal" href="#tesis"><span class="tile sm"><svg class="ic light"><use href="#i-award"/></svg></span><div><b>Dirección de tesis doctorales</b><span>2 tesis dirigidas, una con Sobresaliente Cum Laude · ver en Investigación</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
-    </div>
+  </div>
+</section>
 
-    <!-- ===== BLOQUE 3: TÍTULOS PROPIOS ===== -->
-    <div class="tblock reveal">
-      <div class="tblock-head"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><h3>Títulos propios</h3><p>Cursos de especialización y formación no reglada</p></div><span class="cnt">2005 – 2009</span></div>
+<!-- ================= DOCENCIA · TÍTULOS PROPIOS ================= -->
+<section id="propios">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><span class="num">Docencia · Títulos propios</span><h2>Títulos propios</h2><p>Cursos de especialización y formación no reglada</p><p class="sec-sum">3 cursos · 2005 – 2009</p></div></div>
       <div class="minisub">Cursos impartidos · línea de tiempo</div>
       <div class="gantt reveal" data-tl="propios"></div>
-    </div>
+  </div>
+</section>
 
-    <h3 class="sub reveal" style="margin-top:44px"><svg class="ic"><use href="#i-book"/></svg> Publicaciones docentes</h3>
+<!-- ================= DOCENCIA · TFG Y TFM ================= -->
+<section id="tfg" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-doc"/></svg></span><div><span class="num">Docencia · Dirección de trabajos</span><h2>Trabajos Fin de Grado y Fin de Máster</h2><p>Trabajos académicos dirigidos</p><p class="sec-sum">2 proyectos fin de grado · 1 trabajo fin de máster</p></div></div>
+    <div class="entries">
+      <article class="entry reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-dna"/></svg></span><div class="e-body"><div class="e-top"><span class="when">Proyecto Fin de Grado · 2023</span></div><h3>Estudio del perfil transcriptómico de muestras de glioblastoma humanas</h3><p>Nuria Termes Sabater · Grado en Biotecnología</p></div></article>
+      <article class="entry reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-bars"/></svg></span><div class="e-body"><div class="e-top"><span class="when">Proyecto Fin de Grado · 2023</span></div><h3>Evolución estadística de separaciones, nulidades y divorcios en los años 2013–2020</h3><p>Jorge Pliego Marín · Grado en Estadística Empresarial</p></div></article>
+      <article class="entry reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-leaf"/></svg></span><div class="e-body"><div class="e-top"><span class="when">Trabajo Fin de Máster · 2011</span></div><h3>Estimación de parámetros relacionados con la calidad del compost mediante espectroscopía en el infrarrojo cercano (NIRS)</h3><p>Luis Nazario Gálvez Sola · Máster en Gestión, Tratamiento y Valorización de Residuos Orgánicos · Sobresaliente · Codirección con R. Moral</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCENCIA · PUBLICACIONES DOCENTES ================= -->
+<section id="pubdoc">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-book"/></svg></span><div><span class="num">Docencia · Materiales</span><h2>Publicaciones docentes</h2><p>Libros y capítulos para la enseñanza de la estadística</p><p class="sec-sum">5 libros docentes · 1 capítulo</p></div></div>
     <div class="book-list">
-      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-laptop"/></svg></span><div><b>TICs para la docencia y el aprendizaje</b><span>Mayoral, Aparicio, Ortiz, Quesada-Martínez, Morales · Editorial Electrónica UMH, 2019</span></div></div>
-      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-team"/></svg></span><div><b>Entornos Personales de Aprendizaje en la Docencia de Estadística</b><span>Capítulo en <em>Experiencias Docentes en Estadística</em> · UPCT, 2014</span></div></div>
-      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-hourglass"/></svg></span><div><b>Apuntes de Teoría de Colas: Simulación y Análisis de Sistemas de Espera</b><span>Mayoral, Morales, Barber, Aparicio · UMH, 2007</span></div></div>
-      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-shield"/></svg></span><div><b>Modelos Estadísticos para Pérdidas y Reclamaciones</b><span>Mayoral, Morales, Barber, Aparicio · UMH, 2007</span></div></div>
-      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-sigma"/></svg></span><div><b>Modelos Lineales Generalizados</b><span>Mayoral, Morales · UMH, 2001</span></div></div>
-      <div class="book reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-calc"/></svg></span><div><b>Pràctiques d'Estadística Matemàtica</b><span>Abellán, Álvarez-Valdés, Aniceto, Armero, Bayarri et al. · Universitat de València, 2000</span></div></div>
+      <a class="book reveal" href="http://editorial.edu.umh.es/catalogo/" target="_blank" rel="noopener"><span class="tile soft sm"><svg class="ic teal"><use href="#i-laptop"/></svg></span><div><b>TICs para la docencia y el aprendizaje</b><span>Mayoral, Aparicio, Ortiz, Quesada-Martínez, Morales · Editorial Electrónica UMH, 2019</span><span class="isbn">Catálogo Editorial UMH</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
+      <a class="book reveal" href="https://search.worldcat.org/search?q=bn:9788494198830" target="_blank" rel="noopener"><span class="tile soft sm"><svg class="ic teal"><use href="#i-team"/></svg></span><div><b>Entornos Personales de Aprendizaje en la Docencia de Estadística</b><span>Capítulo en <em>Experiencias Docentes en Estadística</em>, pp. 7–22 · UPCT, 2014</span><span class="isbn">ISBN 978-84-941988-3-0</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
+      <a class="book reveal" href="https://search.worldcat.org/search?q=bn:9788496297760" target="_blank" rel="noopener"><span class="tile soft sm"><svg class="ic teal"><use href="#i-hourglass"/></svg></span><div><b>Apuntes de Teoría de Colas: Simulación y Análisis de Sistemas de Espera</b><span>Mayoral, Morales, Barber, Aparicio · UMH, 2007</span><span class="isbn">ISBN 978-84-96297-76-0</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
+      <a class="book reveal" href="https://search.worldcat.org/search?q=bn:9788496297784" target="_blank" rel="noopener"><span class="tile soft sm"><svg class="ic teal"><use href="#i-shield"/></svg></span><div><b>Modelos Estadísticos para Pérdidas y Reclamaciones</b><span>Mayoral, Morales, Barber, Aparicio · UMH, 2007</span><span class="isbn">ISBN 978-84-96297-78-4</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
+      <a class="book reveal" href="https://search.worldcat.org/search?q=bn:8495893010" target="_blank" rel="noopener"><span class="tile soft sm"><svg class="ic teal"><use href="#i-sigma"/></svg></span><div><b>Modelos Lineales Generalizados</b><span>Mayoral, Morales · UMH, 2001</span><span class="isbn">ISBN 84-95893-01-0</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
+      <a class="book reveal" href="https://search.worldcat.org/search?q=bn:8437044502" target="_blank" rel="noopener"><span class="tile soft sm"><svg class="ic teal"><use href="#i-calc"/></svg></span><div><b>Pràctiques d'Estadística Matemàtica</b><span>Abellán, Álvarez-Valdés, Aniceto, Armero, Bayarri et al. · Universitat de València, 2000</span><span class="isbn">ISBN 84-370-4450-2</span></div><svg class="ic go"><use href="#i-ext"/></svg></a>
     </div>
   </div>
 </section>
 
-<!-- ================= BANDA INVESTIGACIÓN ================= -->
-<div class="research-band">
-  <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-flask"/></svg></span><div><span>Bloque de investigación</span><h2>Investigación</h2><p>Proyectos · Tesis doctorales · Impacto · Publicaciones</p></div></div>
+<div class="research-band ">
+  <div class="wrap"><span class="tile"><svg class="ic light"><use href="#i-flask"/></svg></span><div><span>Bloque de investigación</span><h2>Investigación</h2><p>Impacto · Publicaciones · Proyectos · Tesis doctorales</p></div></div>
 </div>
-<!-- ================= PROYECTOS ================= -->
-<section id="proyectos" class="alt">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-network"/></svg></span><div><span class="num">04 — Investigación · Proyectos</span><h2>Proyectos de investigación</h2><p>Proyectos competitivos, innovación docente y transferencia</p><p class="sec-sum"><span data-sum="proj"></span></p></div></div>
-    <div class="toolbar reveal" id="projFilters" role="tablist">
-            <button class="filter on" data-f="inv"><svg class="ic"><use href="#i-flask"/></svg> Investigación básica <em data-pc="inv"></em></button>
-      <button class="filter" data-f="doc"><svg class="ic"><use href="#i-board"/></svg> Innovación y divulgación <em data-pc="doc"></em></button>
-      <button class="filter" data-f="tra"><svg class="ic"><use href="#i-briefcase"/></svg> Transferencia <em data-pc="tra"></em></button>
-    </div>
-    <div class="ptl" id="projList"></div>
-  </div>
-</section>
-
-<!-- ================= TESIS (INVESTIGACIÓN) ================= -->
-<section id="tesis" class="thesis-sec">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><span class="num">05 — Investigación · Formación de investigadores</span><h2>Tesis doctorales dirigidas</h2><p>Doctores formados y producción científica derivada</p><p class="sec-sum">2 tesis doctorales (una Cum Laude) · 3 trabajos de investigación</p></div></div>
-    <div class="theses">
-      <article class="thesis reveal">
-        <div class="th-top"><span class="th-year">2026</span><span class="th-badge new"><svg class="ic"><use href="#i-star"/></svg> Tesis más reciente</span></div>
-        <h3>Optimización del rendimiento predictivo mediante la selección de configuraciones de modelos: un enfoque de conjunto</h3>
-        <div class="th-who"><span class="tile sm"><svg class="ic light"><use href="#i-user"/></svg></span><div><b>Carlos García Aroca</b><span>Doctorando · Universidad Miguel Hernández de Elche</span></div></div>
-        <div class="th-tags"><span><svg class="ic"><use href="#i-robot"/></svg> Inteligencia artificial</span><span><svg class="ic teal"><use href="#i-trend"/></svg> Predicción de series temporales</span></div>
-        <div class="th-pubs"><span class="th-k">Publicaciones derivadas</span>
-          <a href="https://doi.org/10.1016/j.eswa.2023.121636" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>Expert Systems with Applications</em>, 2024</a>
-          <a href="https://doi.org/10.1016/j.simpa.2024.100644" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>Software Impacts</em>, 2024</a>
-        </div>
-      </article>
-      <article class="thesis reveal">
-        <div class="th-top"><span class="th-year">2009</span><span class="th-badge"><svg class="ic"><use href="#i-award"/></svg> Sobresaliente Cum Laude</span></div>
-        <h3>Modelos geoestadísticos para el estudio de índices bioclimáticos</h3>
-        <div class="th-who"><span class="tile sm"><svg class="ic light"><use href="#i-user"/></svg></span><div><b>Josep Xavier Barber Vallés</b><span>Programa de Estadística e Investigación Operativa · UMH · Codirección con A. López-Quílez</span></div></div>
-        <div class="th-tags"><span><svg class="ic"><use href="#i-pin"/></svg> Estadística espacial</span><span><svg class="ic teal"><use href="#i-bell"/></svg> Modelos bayesianos</span></div>
-        <div class="th-pubs"><span class="th-k">Publicaciones derivadas</span>
-          <a href="https://doi.org/10.1007/s13253-018-00345-z" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>J. of Agricultural, Biological and Environmental Statistics</em>, 2019</a>
-          <a href="https://www.idescat.cat/sort/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>SORT – Statistics and Operations Research Transactions</em>, 2017</a>
-        </div>
-      </article>
-    </div>
-    <h3 class="sub reveal" style="margin-top:40px"><svg class="ic"><use href="#i-cap"/></svg> Otros trabajos de investigación dirigidos</h3>
-    <div class="others">
-      <div class="card reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-leaf"/></svg></span><div><span class="when">Memoria Fin de Máster · 2011</span><h4>Estimación de parámetros de calidad del compost mediante espectroscopía NIRS</h4><p>Luis Nazario Gálvez Sola · Sobresaliente · Codirección con R. Moral</p></div></div>
-      <div class="card reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-dna"/></svg></span><div><span class="when">Proyecto Fin de Grado · 2023</span><h4>Estudio del perfil transcriptómico de muestras de glioblastoma humanas</h4><p>Nuria Termes Sabater · Grado en Biotecnología</p></div></div>
-      <div class="card reveal"><span class="tile soft sm"><svg class="ic teal"><use href="#i-bars"/></svg></span><div><span class="when">Proyecto Fin de Grado · 2023</span><h4>Evolución estadística de separaciones, nulidades y divorcios (2013-2020)</h4><p>Jorge Pliego Marín · Grado en Estadística Empresarial</p></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= IMPACTO ================= -->
 <section id="impacto" class="dark">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-trophy"/></svg></span><div><span class="num">06 — Investigación · Bibliometría</span><h2>Indicadores de impacto</h2><p>Citas e índices bibliométricos según distintas fuentes</p><p class="sec-sum">1.097 citas · índice h 16 · índice i10 22</p></div></div>
-
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-trophy"/></svg></span><div><span class="num">Investigación · Bibliometría</span><h2>Indicadores de impacto</h2><p>Citas e índices bibliométricos según distintas fuentes</p><p class="sec-sum">1.097 citas · índice h 16 · índice i10 22</p></div></div>
     <div class="metric-cards">
       <a class="mcard reveal" href="https://scholar.google.es/citations?user=OkUmSC0AAAAJ" target="_blank" rel="noopener">
         <div class="mhead"><span class="tile"><svg class="ic"><use href="#i-scholar"/></svg></span> Google Scholar</div>
@@ -837,40 +870,17 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
       </a>
     </div>
 
-    <div class="impact-grid">
-      <div class="panel reveal">
-        <h3 class="sub"><svg class="ic"><use href="#i-bars"/></svg> Total de citas por fuente</h3>
-        <div class="bars">
-          <div class="bar"><span>Google Scholar</span><div class="track"><div class="fill" style="--w:100%"></div></div><b>1.097</b></div>
-          <div class="bar"><span>Dimensions</span><div class="track"><div class="fill" style="--w:49.6%"></div></div><b>544</b></div>
-          <div class="bar"><span>OpenCitations</span><div class="track"><div class="fill" style="--w:45.9%"></div></div><b>503</b></div>
-          <div class="bar"><span>Dimensions (2 años)</span><div class="track"><div class="fill" style="--w:7.8%"></div></div><b>86</b></div>
-          <div class="bar"><span>Dialnet</span><div class="track"><div class="fill" style="--w:2.5%"></div></div><b>27</b></div>
-        </div>
-      </div>
-      <div class="panel reveal">
-        <h3 class="sub"><svg class="ic"><use href="#i-table"/></svg> Detalle de citas</h3>
-        <div class="tscroll">
-        <table>
-          <thead><tr><th>Fuente</th><th>Publ. con citas</th><th>Total citas</th><th>Media</th><th>Mediana</th><th>Prom. autores</th><th>Mediana autores</th></tr></thead>
-          <tbody>
-            <tr><td>Dialnet Métricas</td><td>3</td><td>27</td><td>9,00</td><td>10,00</td><td>3,67</td><td>4,00</td></tr>
-            <tr><td>Dimensions</td><td>23</td><td>544</td><td>23,65</td><td>9,00</td><td>5,83</td><td>5,00</td></tr>
-            <tr><td>Dimensions (últimos 2 años)</td><td>23</td><td>86</td><td>3,74</td><td>2,00</td><td>5,83</td><td>5,00</td></tr>
-            <tr><td>OpenCitations</td><td>23</td><td>503</td><td>21,87</td><td>8,00</td><td>5,83</td><td>5,00</td></tr>
-          </tbody>
-        </table>
-        </div>
-        <p class="note">Fuente: Portal de Investigación UMH. Datos de Google Scholar a 08/10/2026 y de Dialnet a 19/10/2026.</p>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ================= PUBLICACIONES ================= -->
 <section id="publicaciones">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-book"/></svg></span><div><span class="num">07 — Investigación · Producción científica</span><h2>Publicaciones</h2><p>Artículos, capítulos, libros y congresos</p><p class="sec-sum"><span data-sum="pubs"></span></p></div></div>
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-book"/></svg></span><div><span class="num">Investigación · Producción científica</span><h2>Publicaciones</h2><p>Artículos, capítulos, libros y congresos</p><p class="sec-sum"><span data-sum="pubs"></span></p></div></div>
+    <div class="pub-stats reveal">
+      <a class="stat" href="https://scholar.google.es/citations?user=OkUmSC0AAAAJ" target="_blank" rel="noopener"><div class="n" data-count="1097">0</div><div class="l">Citas en Google Scholar</div><svg class="ic bgic"><use href="#i-quote"/></svg></a>
+      <a class="stat" href="https://scholar.google.es/citations?user=OkUmSC0AAAAJ" target="_blank" rel="noopener"><div class="n" data-count="16">0</div><div class="l">Índice h (Google Scholar)</div><svg class="ic bgic"><use href="#i-trend"/></svg></a>
+    </div>
     <div class="toolbar reveal" id="pubFilters">
       <button class="filter on" data-f="all">Todas</button>
       <button class="filter" data-f="art"><svg class="ic"><use href="#i-doc"/></svg> Artículos</button>
@@ -884,10 +894,47 @@ footer{background:var(--night-950);color:#8e9ab6;text-align:center;padding:26px;
   </div>
 </section>
 
+<!-- ================= PROYECTOS ================= -->
+<section id="proyectos" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-network"/></svg></span><div><span class="num">Investigación · Proyectos</span><h2>Proyectos de investigación</h2><p>Investigación básica, innovación y divulgación, y transferencia</p><p class="sec-sum"><span data-sum="proj"></span></p></div></div>
+    <div class="toolbar reveal" id="projFilters" role="tablist">
+            <button class="filter on" data-f="inv"><svg class="ic"><use href="#i-flask"/></svg> Investigación básica <em data-pc="inv"></em></button>
+      <button class="filter" data-f="doc"><svg class="ic"><use href="#i-board"/></svg> Innovación y divulgación <em data-pc="doc"></em></button>
+      <button class="filter" data-f="tra"><svg class="ic"><use href="#i-briefcase"/></svg> Transferencia <em data-pc="tra"></em></button>
+    </div>
+    <div class="ptl" id="projList"></div>
+  </div>
+</section>
+
+<!-- ================= TESIS ================= -->
+<section id="tesis">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-award"/></svg></span><div><span class="num">Investigación · Formación de investigadores</span><h2>Tesis doctorales dirigidas</h2><p>Doctores formados y producción científica derivada</p><p class="sec-sum">2 tesis doctorales · una con Sobresaliente Cum Laude</p></div></div>
+    <div class="entries">
+      <article class="entry thesis-entry reveal"><span class="tile sm"><svg class="ic light"><use href="#i-award"/></svg></span><div class="e-body"><div class="e-top"><span class="when">Tesis doctoral · 2026</span></div><h3>Optimización del rendimiento predictivo mediante la selección de configuraciones de modelos: un enfoque de conjunto</h3><p><b>Carlos García Aroca</b> · Universidad Miguel Hernández de Elche</p><div class="e-links"><span>Publicaciones derivadas:</span><a href="https://doi.org/10.1016/j.eswa.2023.121636" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>Expert Systems with Applications</em>, 2024</a><a href="https://doi.org/10.1016/j.simpa.2024.100644" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>Software Impacts</em>, 2024</a></div></div></article>
+      <article class="entry thesis-entry reveal"><span class="tile sm"><svg class="ic light"><use href="#i-award"/></svg></span><div class="e-body"><div class="e-top"><span class="when">Tesis doctoral · 2009</span><span class="e-badge">Sobresaliente Cum Laude</span></div><h3>Modelos geoestadísticos para el estudio de índices bioclimáticos</h3><p><b>Josep Xavier Barber Vallés</b> · Programa de Estadística e Investigación Operativa · UMH · Codirección con A. López-Quílez</p><div class="e-links"><span>Publicaciones derivadas:</span><a href="https://doi.org/10.1007/s13253-018-00345-z" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>JABES</em>, 2019</a><a href="https://www.idescat.cat/sort/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-doc"/></svg> <em>SORT</em>, 2017</a></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APARTADO ABIERTO (pendiente de completar) =================
+     Cambia el título, el subtítulo y el contenido cuando decidas qué incluir.
+     Si cambias el id "otros", cámbialo también en el menú lateral (enlace href="#otros"). -->
+<section id="otros" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-star"/></svg></span><div><span class="num">Más</span><h2>Otras actividades</h2><p>Apartado en preparación</p><p class="sec-sum">Próximamente</p></div></div>
+    <div class="placeholder reveal">
+      <svg class="ic"><use href="#i-star"/></svg>
+      <p>Este apartado se completará próximamente.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CONTACTO ================= -->
 <section id="contacto" class="dark">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-send"/></svg></span><div><span class="num">08 — Hablemos</span><h2>Contacto</h2><p>Estaré encantado de colaborar en docencia, investigación o consultoría estadística</p></div></div>
+    <div class="sec-head reveal"><span class="tile"><svg class="ic light"><use href="#i-send"/></svg></span><div><span class="num">Hablemos</span><h2>Contacto</h2><p>Estaré encantado de colaborar en docencia, investigación o consultoría estadística</p></div></div>
     <div class="cgrid">
       <div class="citem reveal"><span class="tile"><svg class="ic"><use href="#i-mail"/></svg></span><h3>Correo</h3><a href="mailto:j.morales@umh.es">j.morales@umh.es</a></div>
       <div class="citem reveal"><span class="tile"><svg class="ic teal"><use href="#i-phone"/></svg></span><h3>Teléfono despacho</h3><a href="tel:+34966658961">+34 966 658 961</a></div>
@@ -1061,20 +1108,20 @@ const TL={
    ["Sacar el máximo provecho a tus datos: Estadística Bayesiana","UMH · 8 h",[[2006,2006]]],
    ["Estadística Aplicada a las Ciencias Sociales","UMH · 8 h",[[2005,2005]]]]}]
 };
-const yy=(a,b)=>a===b?`${a}`:`${a}–${String(b).slice(-2)}`;
+const yy=(a,b)=>a===b?`${a}`:`${a}–${b}`;
 document.querySelectorAll('.gantt[data-tl]').forEach(el=>{
   const groups=TL[el.dataset.tl];const all=groups.flatMap(g=>g.items.flatMap(i=>i[2].flat()));
   let lo=Math.min(...all),hi=Math.max(...all)+1;
   const step=hi-lo>12?5:hi-lo>6?2:1;lo=Math.floor(lo/step)*step;hi=Math.ceil(hi/step)*step;
   const pc=v=>((v-lo)/(hi-lo)*100).toFixed(3)+'%';
   let ticks='';for(let y=lo;y<=hi;y+=step)ticks+=`<span style="left:${pc(y)}">${y}</span>`;
-  let grid='';for(let y=lo;y<=hi;y+=step)grid+=`<i style="left:${pc(y)}"></i>`;
-  let html=`<div class="g-axis"><div class="g-lab"></div><div class="g-track g-ticks">${ticks}</div></div>`;
+  let grid='';for(let y=lo;y<=hi;y++)grid+=`<i class="${y%5===0?'major':''}" style="left:${pc(y)}"></i>`;
+  let html=`<div class="g-axis"><div class="g-lab"></div><div class="g-track g-ticks">${ticks}</div><div class="g-yrs-h">Años</div></div>`;
   groups.forEach(g=>{
     html+=`<div class="g-group" style="--c:${g.c}"><span>${g.g}</span><em>${g.items.length}</em></div>`;
     g.items.forEach(([t,d,segs])=>{
-      const bars=segs.map(([a,b])=>{const w=(b+1-a)/(hi-lo)*100;return `<div class="g-bar${a===b?' one':(w<8?' short':'')}${(a-lo)/(hi-lo)>.72?' end':''}" style="left:${pc(a)};width:${w.toFixed(3)}%" title="${t} · ${yy(a,b)}"><span>${yy(a,b)}</span></div>`}).join('');
-      html+=`<div class="g-row" style="--c:${g.c}"><div class="g-lab"><b>${t}</b><small>${d}</small><span class="g-yrs">${segs.map(([a,b])=>yy(a,b)).join(' · ')}</span></div><div class="g-track">${grid}${bars}</div></div>`;
+      const bars=segs.map(([a,b])=>{const w=(b+1-a)/(hi-lo)*100;return `<div class="g-bar${a===b?' one':''}" style="left:${pc(a)};width:${w.toFixed(3)}%" title="${t} · ${yy(a,b)}"></div>`}).join('');
+      html+=`<div class="g-row" style="--c:${g.c}"><div class="g-lab"><b>${t}</b><small>${d}</small></div><div class="g-track">${grid}${bars}</div><div class="g-yrs">${segs.map(([a,b])=>yy(a,b)).join('<br>')}</div></div>`;
     });
   });
   el.innerHTML=html;
@@ -1088,12 +1135,13 @@ function renderPubs(){
   const term=norm(q.value);
   const items=PUBS.filter(p=>(pf==='all'||p.k===pf)&&norm(p.t+p.a+p.s).includes(term));
   document.getElementById('pubCount').textContent=`${items.length} resultado${items.length!==1?'s':''}`;
-  pubList.innerHTML=items.map(p=>`
+  const years=[...new Set(items.map(p=>p.y))];
+  pubList.innerHTML=years.map(y=>`<div class="pyear"><div class="ptl-y"><span>${y}</span></div><div class="pyear-items">`+items.filter(p=>p.y===y).map(p=>`
    <article class="pub" style="--k:${KCOLOR[p.k]}">
-     <div><div class="yr">${p.y}</div><div class="kind">${I(KICON[p.k])} ${KIND[p.k]}</div></div>
-     <div><h3>${p.t}</h3><div class="au">${p.a.replace(/Morales, J\./g,'<b>Morales, J.</b>')}</div>
-     <div class="src">${p.s}${p.d?`<a class="doi" href="https://doi.org/${p.d}" target="_blank" rel="noopener">DOI ${I('ext')}</a>`:''}</div></div>
-   </article>`).join('');
+     <div class="kind">${I(KICON[p.k])} ${KIND[p.k]}</div>
+     <h3>${p.t}</h3><div class="au">${p.a.replace(/Morales, J\./g,'<b>Morales, J.</b>')}</div>
+     <div class="src">${p.s}${p.d?`<a class="doi" href="https://doi.org/${p.d}" target="_blank" rel="noopener">DOI ${I('ext')}</a>`:''}</div>
+   </article>`).join('')+`</div></div>`).join('');
 }
 document.querySelectorAll('#pubFilters .filter').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#pubFilters .filter').forEach(x=>x.classList.remove('on'));b.classList.add('on');pf=b.dataset.f;renderPubs()});
